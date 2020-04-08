@@ -1,0 +1,53 @@
+<?xml version="1.0" ?>
+<dict>
+    <dict name="Bertle#9579">
+        <int name="Current HP" val="27"/>
+        <int name="Spell Save" val="15"/>
+        <int name="Proficiency" val="3"/>
+        <int name="Spell Attack" val="7"/>
+        <str name="Name" val="Goli "/>
+        <str name="URL" val="https://www.dungeonmastersvault.com/pages/dnd/5e/characters/17592201290099"/>
+        <str name="AC" val="13 "/>
+        <str name="Alignment" val="Unaligned"/>
+        <str name="CHA" val="14 "/>
+        <str name="CON" val="9 "/>
+        <int name="Challenge Rating" val="0"/>
+        <str name="DEX" val="12 "/>
+        <str name="HP" val="27 "/>
+        <str name="INT" val="17 "/>
+        <int name="Passive Perception" val="10"/>
+        <str name="STR" val="13 "/>
+        <str name="Total Level" val="6 "/>
+        <str name="Speed" val="30ft "/>
+        <str name="Main Class" val="Druid "/>
+        <str name="WIS" val="18 "/>
+        <str name="Skills Prof" val="Animal Handling, Insight, Nature, Perception ,"/>
+        <dict name="Skills">
+            <int name="dexterity" val="1"/>
+            <int name="wisdom" val="4"/>
+            <int name="intelligence" val="3"/>
+            <int name="strength" val="1"/>
+            <int name="constitution" val="-1"/>
+            <int name="charisma" val="2"/>
+            <int name="acrobatics" val="1"/>
+            <int name="animalhandling" val="7"/>
+            <int name="arcana" val="3"/>
+            <int name="athletics" val="1"/>
+            <int name="deception" val="2"/>
+            <int name="history" val="3"/>
+            <int name="insight" val="7"/>
+            <int name="intimidation" val="2"/>
+            <int name="investigation" val="3"/>
+            <int name="medicine" val="4"/>
+            <int name="nature" val="6"/>
+            <int name="perception" val="7"/>
+            <int name="performance" val="2"/>
+            <int name="persuasion" val="2"/>
+            <int name="religion" val="3"/>
+            <int name="sleightofhand" val="1"/>
+            <int name="stealth" val="1"/>
+            <int name="survival" val="4"/>
+        </dict>
+        <int name="Initiative" val="1"/>
+    </dict>
+</dict>
