@@ -1,5 +1,6 @@
 <?xml version="1.0" ?>
 <dict>
+    <int name="Current HP" val="45"/>
     <int name="Spell Save" val="16"/>
     <int name="Proficiency" val="3"/>
     <int name="Spell Attack" val="8"/>
@@ -19,12 +20,13 @@
     <str name="Speed" val="30ft "/>
     <str name="Main Class" val="Warlock "/>
     <str name="WIS" val="12 "/>
+    <str name="Skills Prof" val="Arcana, Deception, Insight, Investigation, Persuasion, Religion ,"/>
     <dict name="Skills">
-        <int name="strength" val="0"/>
         <int name="dexterity" val="3"/>
-        <int name="constitution" val="2"/>
-        <int name="intelligence" val="1"/>
         <int name="wisdom" val="1"/>
+        <int name="intelligence" val="1"/>
+        <int name="strength" val="0"/>
+        <int name="constitution" val="2"/>
         <int name="charisma" val="5"/>
         <int name="acrobatics" val="3"/>
         <int name="animalhandling" val="1"/>

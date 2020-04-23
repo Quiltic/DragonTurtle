@@ -1,0 +1,51 @@
+<?xml version="1.0" ?>
+<dict>
+    <int name="Current HP" val="51"/>
+    <int name="Spell Save" val="15"/>
+    <int name="Proficiency" val="3"/>
+    <int name="Spell Attack" val="7"/>
+    <str name="Name" val="Corey "/>
+    <str name="URL" val="https://www.dungeonmastersvault.com/pages/dnd/5e/character-builder"/>
+    <str name="AC" val="15 "/>
+    <str name="Alignment" val="Unaligned"/>
+    <str name="CHA" val="10 "/>
+    <str name="CON" val="16 "/>
+    <int name="Challenge Rating" val="0"/>
+    <str name="DEX" val="12 "/>
+    <str name="HP" val="51 "/>
+    <str name="INT" val="10 "/>
+    <int name="Passive Perception" val="10"/>
+    <str name="STR" val="14 "/>
+    <str name="Total Level" val="6 "/>
+    <str name="Speed" val="30ft "/>
+    <str name="Main Class" val="Cleric "/>
+    <str name="WIS" val="18 "/>
+    <str name="Skills Prof" val="Arcana, History, Insight, Perception, Persuasion, Religion, Sleight of Hand ,"/>
+    <dict name="Skills">
+        <int name="dexterity" val="1"/>
+        <int name="wisdom" val="4"/>
+        <int name="intelligence" val="0"/>
+        <int name="strength" val="2"/>
+        <int name="constitution" val="3"/>
+        <int name="charisma" val="0"/>
+        <int name="acrobatics" val="1"/>
+        <int name="animalhandling" val="4"/>
+        <int name="arcana" val="3"/>
+        <int name="athletics" val="2"/>
+        <int name="deception" val="0"/>
+        <int name="history" val="3"/>
+        <int name="insight" val="7"/>
+        <int name="intimidation" val="0"/>
+        <int name="investigation" val="0"/>
+        <int name="medicine" val="4"/>
+        <int name="nature" val="0"/>
+        <int name="perception" val="7"/>
+        <int name="performance" val="0"/>
+        <int name="persuasion" val="3"/>
+        <int name="religion" val="3"/>
+        <int name="sleightofhand" val="4"/>
+        <int name="stealth" val="1"/>
+        <int name="survival" val="4"/>
+    </dict>
+    <int name="Initiative" val="1"/>
+</dict>

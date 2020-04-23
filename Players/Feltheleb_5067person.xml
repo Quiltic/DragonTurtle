@@ -1,0 +1,51 @@
+<?xml version="1.0" ?>
+<dict>
+    <int name="Current HP" val="20"/>
+    <int name="Spell Save" val="12"/>
+    <int name="Proficiency" val="2"/>
+    <int name="Spell Attack" val="4"/>
+    <str name="Name" val="Person "/>
+    <str name="URL" val="https://www.dungeonmastersvault.com/pages/dnd/5e/character-builder"/>
+    <str name="AC" val="10 "/>
+    <str name="Alignment" val="Unaligned"/>
+    <str name="CHA" val="11 "/>
+    <str name="CON" val="10 "/>
+    <int name="Challenge Rating" val="0"/>
+    <str name="DEX" val="10 "/>
+    <str name="HP" val="20 "/>
+    <str name="INT" val="10 "/>
+    <int name="Passive Perception" val="10"/>
+    <str name="STR" val="10 "/>
+    <str name="Total Level" val="1 "/>
+    <str name="Speed" val="30ft "/>
+    <str name="Main Class" val="Cleric "/>
+    <str name="WIS" val="14 "/>
+    <str name="Skills Prof" val="Medicine, Religion ,"/>
+    <dict name="Skills">
+        <int name="dexterity" val="0"/>
+        <int name="wisdom" val="2"/>
+        <int name="intelligence" val="0"/>
+        <int name="strength" val="0"/>
+        <int name="constitution" val="0"/>
+        <int name="charisma" val="0"/>
+        <int name="acrobatics" val="0"/>
+        <int name="animalhandling" val="2"/>
+        <int name="arcana" val="0"/>
+        <int name="athletics" val="0"/>
+        <int name="deception" val="0"/>
+        <int name="history" val="0"/>
+        <int name="insight" val="2"/>
+        <int name="intimidation" val="0"/>
+        <int name="investigation" val="0"/>
+        <int name="medicine" val="4"/>
+        <int name="nature" val="0"/>
+        <int name="perception" val="2"/>
+        <int name="performance" val="0"/>
+        <int name="persuasion" val="0"/>
+        <int name="religion" val="2"/>
+        <int name="sleightofhand" val="0"/>
+        <int name="stealth" val="0"/>
+        <int name="survival" val="2"/>
+    </dict>
+    <int name="Initiative" val="0"/>
+</dict>

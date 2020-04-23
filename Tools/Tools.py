@@ -26,20 +26,20 @@ except:
 
 # jtools
 try:
-    import JTools as jt
+    from JTools import find_all, Load, Save #, flattenList, cutUp
 except:
     import os
     os.system("python3 -m pip install git+https://github.com/Quiltic/JTools.git")
-    import JTools as jt
+    from JTools import find_all, Load, Save #, flattenList, cutUp
 
 #from Tools.MonsterFinder import *
 #from Tools.SpellFinder import *
-
+#deck_of_cards = ['A♤', '2♤', '3♤', '4♤', '5♤', '6♤', '7♤', '8♤', '9♤', '10♤', 'J♤', 'Q♤', 'K♤', 'A♡', '2♡', '3♡', '4♡', '5♡', '6♡', '7♡', '8♡', '9♡', '10♡', 'J♡', 'Q♡', 'K♡', 'A♢', '2♢', '3♢', '4♢', '5♢', '6♢', '7♢', '8♢', '9♢', '10♢', 'J♢', 'Q♢', 'K♢', 'A♧', '2♧', '3♧', '4♧', '5♧', '6♧', '7♧', '8♧', '9♧', '10♧', 'J♧', 'Q♧', 'K♧']
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 ###################### D&D Tools ###################
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-import Tools.player
+#import Tools.Player
 
 '''
 # This is anchent and not to be destrbed
@@ -156,7 +156,7 @@ def make_charicter(ctx, *args):
     info['Skills'] = skills
 
     #save char
-    jt.Save(('Players\\'+str(ctx.author).replace('#','_').replace(' ','') + info['Name'].lower().replace(' ','')), info)
+    Save(('Players\\'+str(ctx.author).replace('#','_').replace(' ','') + info['Name'].lower().replace(' ','')), info)
     return(info)
     
 
@@ -168,12 +168,37 @@ def get_modifyer(main, typ):
 
 
 '''
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+###################### Cards Commands ###################
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+def shuffleDeck(deck, times = 4, amount = 26):
+    '''
+    suffles a deck
+    shuffle(deck, times = 4, amount = 20) : gives a deck randomly suffled
+    shuffle(deck, 6) better shuffle
+    shuffle(deck, 12, 40) insane shuffle
+    '''
+    cards = list(deck) # clone
+    #print(cards)
+    for _ in range(times):
+        for _ in range(amount):
+            point = randomnum(0,len(cards)-1) # card 1 location
+            difpoint = randomnum(0,len(cards)-1) # card 2 location
+            difcard = cards[point] # card holder
+            cards[point] = cards[difpoint] # swap card 1
+            cards[difpoint] = difcard # swap card 2
+    
+    #print(cards)
+    return(cards)
+
+
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 ###################### Monster Tools ###################
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-
+#
 def findMonster(NAME = 'Dragon turtle'):
     '''
     Given a name it will give you basics on a monster and a url to its page
@@ -209,7 +234,7 @@ def findMonster(NAME = 'Dragon turtle'):
     return(Monster)
 
 
-
+#
 def cleanPrintM(Monster):
     '''
     Prints out basic monster stuff
@@ -253,6 +278,65 @@ def cleanPrintM(Monster):
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 ###################### Spell Tools ###################
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+# damage damage damage
+def offenceSpell(spell):
+    '''
+    Given a spell (dict) it will try to give you its damage and other helpfull bits relting to casting a damage spell
+    '''
+    offencive = {'damage':[], 'type':'area', 'save':None, 'higherLvl':None}
+
+    try:
+        # get the damages and there types cold lightning pearcing ect
+        places = find_all(spell['does'],'take')
+        for a in places:
+            p1 = spell['does'][a:].index(' ') # could be takes witch would leave an s
+            p2 = spell['does'][a:].index(' damage')
+
+            offencive['damage'] += [spell['does'][a+p1+1:p2+a].split(' ')]
+    except ValueError:
+        #print('area?')
+        pass
+    except Exception as e:
+        print('Spell attack error: {}'.format(e))
+
+
+
+    try:
+        # get the type of spell ie ranged melee something else
+        place = spell['does'].index('spell attack') # not achualy needed
+        offencive['type'] = 'ranged' if 'ranged' in spell['does'][:place] else 'melee' if 'melee' in spell['does'][:place] else 'NO IDEA'
+        #print(tpe)
+    except ValueError:
+        #print('area?')
+        pass
+    except Exception as e:
+        print('Spell attack error: {}'.format(e))
+
+
+    try:
+        # if it has a saving through
+        place = spell['does'].index(' saving throw')
+        offencive['save'] = spell['does'][find_all(spell['does'][:place],' ')[-1]+1:place]
+    except ValueError:
+        #print('no save')
+        pass
+    except Exception as e:
+        print('Save throw error: {}'.format(e))
+
+    try:
+        # upgrades
+        place = spell['does'].index("increases by ")
+        #print(place+13,spell['does'][place+13:].index(' ')+place+13)
+        offencive['higherLvl'] = spell['does'][place+13:spell['does'][place+13:].index(' ')+place+13] # +13 is from "increases by "
+    except ValueError:
+        #print('no save')
+        pass
+    except Exception as e:
+        print('Save throw error: {}'.format(e))
+
+
+    print(offencive)
+    return(offencive)
 
 
 # bread and butter of file. Gets spells 
@@ -347,7 +431,7 @@ def SpellBook(spellname = 'ALL', BOOKNAME = "Spells", ADD = True):
     SpellBook(["Find familiar", "Mage Hand"]): gives dict data on find familiar and Mage hand in a list : loads a spellbook named Spells
     '''
     try:
-        SpellList = jt.Load(BOOKNAME) # load a spellbook
+        SpellList = Load(BOOKNAME) # load a spellbook
     except:
         print("Couldent load: {}. Making new file.".format(BOOKNAME)) # Error on spellbook
         SpellList = {} # empty spell list
@@ -366,7 +450,7 @@ def SpellBook(spellname = 'ALL', BOOKNAME = "Spells", ADD = True):
             spells.append(SpellList[sp]) # if spell in list add it to spells
         except:
             SpellList[sp] = findSpell(sp) # spell not in list look it up online
-            jt.Save(BOOKNAME,SpellList) # Save book
+            Save(BOOKNAME,SpellList) # Save book
             spells.append(SpellList[sp]) # Add to return spells
     
     return(spells[0] if len(spells) == 1 else spells) # return all spells asked for in a list or as a dict if you ask for one
@@ -410,8 +494,8 @@ def reloadSpellList(NAME = 'Spells'):
     reloadSpellList(NAME): gives the spell list "Should be the same or similar"
     '''
     print("Begin Reload")
-    spellList = [a for a in jt.Load(NAME)] # get the spell names
-    jt.Save("Spells",{}) # basicly refreshes the Spell list
+    spellList = [a for a in Load(NAME)] # get the spell names
+    Save("Spells",{}) # basicly refreshes the Spell list
     print("New save made.")
     print("Grabbing spells.")
     lst = SpellBook(spellList) # recollect all spells
@@ -449,12 +533,22 @@ def SaveFile(NAME, data):
 ###################### Basic Commands ###################
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 #this is to send complex messages and its from old turtle
-async def sendmsg(ctx,msg):
-    await ctx.send(msg)
+async def sendmsg(ctx, msg = 'embd', embed = None):
+    if embed:
+        await ctx.send(embed=embed)
+    else:
+        await ctx.send(msg)
+    
 
-#this is for old commands that dont work without it from message event
+#this is for old commands that dont work without it from message event yeah
 async def sendmsgorig(message,msg):
     await message.channel.send(msg)
+
+async def sendmsgdirect(ctx, msg = 'embd', embed = None):
+    if embed:
+        await ctx.author.send(embed=embed)
+    else:
+        await ctx.author.send(msg)
 
 #random number
 def randomnum(low,high):

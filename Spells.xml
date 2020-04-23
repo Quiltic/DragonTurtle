@@ -511,4 +511,595 @@
         </list>
         <str name="url" val="https://www.dnd-spells.com/spell/polymorph"/>
     </dict>
+    <str name="ice-lance" val="None"/>
+    <dict name="darkness">
+        <str name="name" val="Darkness"/>
+        <str name="school" val="Evocation"/>
+        <dict name="cast">
+            <str name="level" val=" 2"/>
+            <str name="casting time" val="1 Action"/>
+            <str name="range" val="60 feet"/>
+            <str name="components" val="V, M (bat fur and a drop of pitch or piece of coal)"/>
+            <str name="duration" val="Concentration, up to 10 minutes"/>
+        </dict>
+        <str name="does" val="|n Magical darkness spreads from a point you choose within range to fill a 15-foot radius sphere for the duration. |nThe darkness spreads around corners. A creature with darkvision can't see through this darkness, and nonmagical light can't illuminate it. |n|nIf the point you choose is on an object you are holding or one that isn't being worn or carried, the darkness emanates from the object and moves with it. Completely covering the source of the darkness with an opaque object, such as a bowl or a helm, blocks the darkness.|n|nIf any of this spell's area overlaps with an area of light created by a spell of 2nd level or lower, the spell that created the light is dispelled. |n"/>
+        <str name="page" val="Page: 230  Players Handbook     "/>
+        <list name="classes">
+            <str val="Sorcerer"/>
+            <str val="Warlock"/>
+            <str val="Wizard"/>
+        </list>
+        <str name="url" val="https://www.dnd-spells.com/spell/darkness"/>
+    </dict>
+    <dict name="grease">
+        <str name="name" val="Grease"/>
+        <str name="school" val="Conjuration"/>
+        <dict name="cast">
+            <str name="level" val=" 1"/>
+            <str name="casting time" val="1 Action"/>
+            <str name="range" val="60 feet"/>
+            <str name="components" val="V, S, M (a bit of pork rind or butter)"/>
+            <str name="duration" val="1 minute"/>
+        </dict>
+        <str name="does" val="|n Slick grease covers the ground in a 10-foot square centered on a point within range and turns it into difficult terrain for the duration.|n|nWhen the grease appears, each creature standing in its area must succeed on a Dexterity saving throw or fall prone. A creature that enters the area or ends its turn there must also succeed on a Dexterity saving throw or fall prone. |n"/>
+        <str name="page" val="Page: 246  Players Handbook     "/>
+        <list name="classes">
+            <str val="Wizard"/>
+        </list>
+        <str name="url" val="https://www.dnd-spells.com/spell/grease"/>
+    </dict>
+    <dict name="firebolt">
+        <str name="name" val="Fire Bolt"/>
+        <str name="school" val="Evocation"/>
+        <dict name="cast">
+            <str name="level" val="Cantrip"/>
+            <str name="casting time" val="1 Action"/>
+            <str name="range" val="120 feet"/>
+            <str name="components" val="V, S"/>
+            <str name="duration" val="Instantaneous"/>
+        </dict>
+        <str name="does" val="|n You hurl a mote of fire at a creature or object within range. Make a ranged spell attack against the target. On a hit, the target takes 1d10 fire damage. A flammable object hit by this spell ignites if it isn't being worn or carried. |n    This spell's damage increases by 1d10 when you reach 5th level (2d10), 11th level (3d10), and 17th level (4d10).        "/>
+        <str name="page" val="Page: 241  Players Handbook     "/>
+        <list name="classes">
+            <str val="Sorcerer"/>
+            <str val="Wizard"/>
+        </list>
+        <str name="url" val="https://www.dnd-spells.com/spell/fire-bolt"/>
+    </dict>
+    <dict name="ray-of-frost">
+        <str name="name" val="Ray of Frost"/>
+        <str name="school" val="Evocation"/>
+        <dict name="cast">
+            <str name="level" val="Cantrip"/>
+            <str name="casting time" val="1 Action"/>
+            <str name="range" val="60 feet"/>
+            <str name="components" val="V, S"/>
+            <str name="duration" val="Instantaneous"/>
+        </dict>
+        <str name="does" val="|n A frigid beam of blue-white light streaks toward a creature within range. Make a ranged spell attack against the target. On a hit, it takes 1d8 cold damage, and its speed is reduced by 10 feet until the start of your next turn. |n    The spell's damage increases by 1d8 when you reach 5th level (2d8), 11th level (3d8), and 17th level (4d8).        "/>
+        <str name="page" val="Page: 271  Players Handbook     "/>
+        <list name="classes">
+            <str val="Sorcerer"/>
+            <str val="Wizard"/>
+        </list>
+        <str name="url" val="https://www.dnd-spells.com/spell/ray-of-frost"/>
+    </dict>
+    <dict name="shocking-grasp">
+        <str name="name" val="Shocking Grasp"/>
+        <str name="school" val="Evocation"/>
+        <dict name="cast">
+            <str name="level" val="Cantrip"/>
+            <str name="casting time" val="1 Action"/>
+            <str name="range" val="Touch"/>
+            <str name="components" val="V, S "/>
+            <str name="duration" val="Instantaneous"/>
+        </dict>
+        <str name="does" val="|n Lightning springs from your hand to deliver a shock to a creature you try to touch.|nMake a melee spell attack against the target. You have advantage on the attack roll if the target is wearing armor made of metal. On a hit, the target takes 1d8 lightning damage, and it can't take reactions until the start of its next turn. |n    The spell's damage increases by 1d8 when you reach 5th level (2d8), 11th level (3d8), and 17th level (4d8).        "/>
+        <str name="page" val="Page: 275  Players Handbook     "/>
+        <list name="classes">
+            <str val="Sorcerer"/>
+            <str val="Wizard"/>
+        </list>
+        <str name="url" val="https://www.dnd-spells.com/spell/shocking-grasp"/>
+    </dict>
+    <dict name="light">
+        <str name="name" val="Light"/>
+        <str name="school" val="Evocation"/>
+        <dict name="cast">
+            <str name="level" val="Cantrip"/>
+            <str name="casting time" val="1 Action"/>
+            <str name="range" val="Touch"/>
+            <str name="components" val="V, M (a firefly or phosphorescent moss)"/>
+            <str name="duration" val="1 hour"/>
+        </dict>
+        <str name="does" val="|n You touch one object that is no larger than 10 feet in any dimension. Until the spell ends, the object sheds bright light in a 20-foot radius and dim light for an additional 20 feet. The light can be colored as you like. Completely covering the object with something opaque blocks the light. The spell ends if you cast it again or dismiss it as an action.|n |nIf you target an object held or worn by a hostile creature, that creature must succeed on a Dexterity saving throw to avoid the spell. |n"/>
+        <str name="page" val="Page: 255  Players Handbook     "/>
+        <list name="classes">
+            <str val="Bard"/>
+            <str val="Cleric"/>
+            <str val="Sorcerer"/>
+            <str val="Wizard"/>
+        </list>
+        <str name="url" val="https://www.dnd-spells.com/spell/light"/>
+    </dict>
+    <str name="minor-ilusion" val="None"/>
+    <dict name="minor-illusion">
+        <str name="name" val="Minor Illusion"/>
+        <str name="school" val="Illusion"/>
+        <dict name="cast">
+            <str name="level" val="Cantrip"/>
+            <str name="casting time" val="1 Action"/>
+            <str name="range" val="30 feet"/>
+            <str name="components" val="S, M (a bit of fleece)"/>
+            <str name="duration" val="1 minute"/>
+        </dict>
+        <str name="does" val="|n You create a sound or an image of an object within range that lasts for the duration. The illusion also ends if you dismiss it as an action or cast this spell again.|n |nIf you create a sound, its volume can range from a whisper to a scream. It can be your voice, someone else's voice, a lion's roar, a beating of drums, or any other sound you choose. The sound continues unabated throughout the duration, or you can make discrete sounds at different times before the spell ends.|n |nIf you create an image of an object such as a chair, muddy footprints, or a small chest it must be no larger than a 5-foot cube. The image can't create sound, light, smell, or any other sensory effect. Physical interaction with the image reveals it to be an illusion, because things can pass through it.|n |nIf a creature uses its action to examine the sound or image, the creature can determine that it is an illusion with a successful Intelligence (Investigation) check against your spell save DC. If a creature discerns the illusion for what it is, the illusion becomes faint to the creature. |n"/>
+        <str name="page" val="Page: 260  Players Handbook     "/>
+        <list name="classes">
+            <str val="Bard"/>
+            <str val="Sorcerer"/>
+            <str val="Warlock"/>
+            <str val="Wizard"/>
+        </list>
+        <str name="url" val="https://www.dnd-spells.com/spell/minor-illusion"/>
+    </dict>
+    <dict name="bless">
+        <str name="name" val="Bless"/>
+        <str name="school" val="Enchantment"/>
+        <dict name="cast">
+            <str name="level" val=" 1"/>
+            <str name="casting time" val="1 Action"/>
+            <str name="range" val="30 feet"/>
+            <str name="components" val="V, S, M (a sprinkling of holy water)"/>
+            <str name="duration" val="Concentration, up to 1 minute"/>
+        </dict>
+        <str name="does" val="|n You bless up to three creatures of your choice within range. Whenever a target makes an attack roll or a saving throw before the spell ends, the target can roll a d4 and add the number rolled to the attack roll or saving throw. |n    When you cast this spell using a spell slot of 2nd level or higher, you can target one additional creature for each slot level above 1st.        "/>
+        <str name="page" val="Page: 219  Players Handbook     "/>
+        <list name="classes">
+            <str val="Cleric"/>
+            <str val="Paladin"/>
+        </list>
+        <str name="url" val="https://www.dnd-spells.com/spell/bless"/>
+    </dict>
+    <dict name="sacred-flame">
+        <str name="name" val="Sacred Flame"/>
+        <str name="school" val="Evocation"/>
+        <dict name="cast">
+            <str name="level" val="Cantrip"/>
+            <str name="casting time" val="1 Action"/>
+            <str name="range" val="60 feet"/>
+            <str name="components" val="V, S"/>
+            <str name="duration" val="Instantaneous"/>
+        </dict>
+        <str name="does" val="|n Flame-like radiance descends on a creature that you can see within range. The target must succeed on a Dexterity saving throw or take 1d8 radiant damage. The target gains no benefit from cover for this saving throw. |n    The spell's damage increases by 1d8 when you reach 5th level (2d8), 11th level (3d8), and 17th level (4d8).        "/>
+        <str name="page" val="Page: 272  Players Handbook     "/>
+        <list name="classes">
+            <str val="Cleric"/>
+        </list>
+        <str name="url" val="https://www.dnd-spells.com/spell/sacred-flame"/>
+    </dict>
+    <str name="sheild" val="None"/>
+    <dict name="chromatic-orb">
+        <str name="name" val="Chromatic Orb"/>
+        <str name="school" val="Evocation"/>
+        <dict name="cast">
+            <str name="level" val=" 1"/>
+            <str name="casting time" val="1 Action"/>
+            <str name="range" val="90 feet"/>
+            <str name="components" val="V, S, M  (a diamond worth at least 50 gp)"/>
+            <str name="duration" val="Instantaneous"/>
+        </dict>
+        <str name="does" val="|n You hurl a 4-inch-diameter sphere of energy at a creature that you can see within range. You choose acid, cold, fire, lightning, poison, or thunder for the type of orb you create, and then make a ranged spell attack against the target. If the attack hits, the creature takes 3d8 damage of the type you chose. |n    When you cast this spell using a spell slot of 2nd level or higher, the damage increases by 1d8 for each slot level above 1st.        "/>
+        <str name="page" val="Page: 221  Players Handbook     "/>
+        <list name="classes">
+            <str val="Sorcerer"/>
+            <str val="Wizard"/>
+        </list>
+        <str name="url" val="https://www.dnd-spells.com/spell/chromatic-orb"/>
+    </dict>
+    <dict name="chain-lightning">
+        <str name="name" val="Chain Lightning"/>
+        <str name="school" val="Evocation"/>
+        <dict name="cast">
+            <str name="level" val=" 6"/>
+            <str name="casting time" val="1 Action"/>
+            <str name="range" val="150 feet"/>
+            <str name="components" val="V, S, M  (a bit of fur; a piece of amber, glass, or a crystal rod; and three silver pins)"/>
+            <str name="duration" val="Instantaneous"/>
+        </dict>
+        <str name="does" val="|n You create a bolt of lightning that arcs toward a target of your choice that you can see within range. Three bolts then leap from that target to as many as three other targets, each of which must be within 30 feet of the first target. A target can be a creature or an object and can be targeted by only one of the bolts. |n|nA target must make a Dexterity saving throw. The target takes 10d8 lightning damage on a failed save, or half as much on a successful one. |n    When you cast this spell using a spell slot of 7th level or higher, one additional bolt leaps from the first target to another target for each slot level above 6th.        "/>
+        <str name="page" val="Page: 221  Players Handbook     "/>
+        <list name="classes">
+            <str val="Sorcerer"/>
+            <str val="Wizard"/>
+        </list>
+        <str name="url" val="https://www.dnd-spells.com/spell/chain-lightning"/>
+    </dict>
+    <dict name="scorching-ray">
+        <str name="name" val="Scorching Ray"/>
+        <str name="school" val="Evocation"/>
+        <dict name="cast">
+            <str name="level" val=" 2"/>
+            <str name="casting time" val="1 Action"/>
+            <str name="range" val="120 feet"/>
+            <str name="components" val="V, S"/>
+            <str name="duration" val="Instantaneous"/>
+        </dict>
+        <str name="does" val="|n You create three rays of fire and hurl them at targets within range. You can hurl them at one target or several. Make a ranged spell attack for each ray. On a hit, the target takes 2d6 fire damage. |n    When you cast this spell using a spell slot of 3rd level or higher, you create one additional ray for each slot level above 2nd.        "/>
+        <str name="page" val="Page: 273  Players Handbook     "/>
+        <list name="classes">
+            <str val="Sorcerer"/>
+            <str val="Wizard"/>
+        </list>
+        <str name="url" val="https://www.dnd-spells.com/spell/scorching-ray"/>
+    </dict>
+    <str name="eldrich-blast" val="None"/>
+    <str name="eldtrich-blast" val="None"/>
+    <dict name="eldritch-blast">
+        <str name="name" val="Eldritch Blast"/>
+        <str name="school" val="Evocation"/>
+        <dict name="cast">
+            <str name="level" val="Cantrip"/>
+            <str name="casting time" val="1 Action"/>
+            <str name="range" val="120 feet"/>
+            <str name="components" val="V, S"/>
+            <str name="duration" val="Instantaneous"/>
+        </dict>
+        <str name="does" val="|n A beam of crackling energy streaks toward a creature within range. Make a ranged spell attack against the target. On a hit, the target takes 1d10 force damage. |n    The spell creates more than one beam when you reach higher levels:  Two beams at 5th level Three beams at 11th level Four beams at 17th level.  You can direct the beams at the same target or at different ones. Make a separate attack roll for each beam.        "/>
+        <str name="page" val="Page: 237  Players Handbook     "/>
+        <list name="classes">
+            <str val="Warlock"/>
+        </list>
+        <str name="url" val="https://www.dnd-spells.com/spell/eldritch-blast"/>
+    </dict>
+    <dict name="speak-with-dead">
+        <str name="name" val="Speak with Dead"/>
+        <str name="school" val="Necromancy"/>
+        <dict name="cast">
+            <str name="level" val=" 3"/>
+            <str name="casting time" val="1 Action"/>
+            <str name="range" val="10 feet"/>
+            <str name="components" val="V, S, M (burning incense)"/>
+            <str name="duration" val="10 minutes"/>
+        </dict>
+        <str name="does" val="|n You grant the semblance of life and intelligence to a corpse of your choice within range, allowing it to answer the questions you pose. The corpse must still have a mouth and can't be undead. The spell fails if the corpse was the target of this spell within the last 10 days.|n|nUntil the spell ends, you can ask the corpse up to five questions. The corpse knows only what it knew in life, including the languages it knew. Answers are usually brief, cryptic, or repetitive, and the corpse is under no compulsion to offer a truthful answer if you are hostile to it or it recognizes you as an enemy. This spell doesn't return the creature's soul to its body, only its animating spirit. Thus, the corpse can't learn new information, doesn't comprehend anything that has happened since it died, and can't speculate about future events. |n"/>
+        <str name="page" val="Page: 277  Players Handbook     "/>
+        <list name="classes">
+            <str val="Bard"/>
+            <str val="Cleric"/>
+        </list>
+        <str name="url" val="https://www.dnd-spells.com/spell/speak-with-dead"/>
+    </dict>
+    <dict name="arms-of-hadar">
+        <str name="name" val="Arms of Hadar"/>
+        <str name="school" val="Conjuration"/>
+        <dict name="cast">
+            <str name="level" val=" 1"/>
+            <str name="casting time" val="1 Action"/>
+            <str name="range" val="Self (10-foot radius)"/>
+            <str name="components" val="V, S"/>
+            <str name="duration" val="Instantaneous"/>
+        </dict>
+        <str name="does" val="|n You invoke the power of Hadar, the Dark Hunger. |nTendrils of dark energy erupt from you and batter all creatures within 10 feet of you. Each creature in that area must make a Strength saving throw. On a failed save, a target takes 2d6 necrotic damage and can't take reactions until its next turn. On a successful save, the creature takes half damage, but suffers no other effect. |n    When you cast this spell using a spell slot of 2nd level or higher, the damage increases by 1d6 for each slot level above 1st.        "/>
+        <str name="page" val="Page: 215  Players Handbook     "/>
+        <list name="classes">
+            <str val="Warlock"/>
+        </list>
+        <str name="url" val="https://www.dnd-spells.com/spell/arms-of-hadar"/>
+    </dict>
+    <str name="cloud-of-dagars" val="None"/>
+    <dict name="cloud-of-daggers">
+        <str name="name" val="Cloud of Daggers"/>
+        <str name="school" val="Conjuration"/>
+        <dict name="cast">
+            <str name="level" val=" 2"/>
+            <str name="casting time" val="1 Action"/>
+            <str name="range" val="60 feet"/>
+            <str name="components" val="V, S, M  (a sliver of glass)"/>
+            <str name="duration" val="Concentration, up to 1 minute"/>
+        </dict>
+        <str name="does" val="|n You fill the air with spinning daggers in a cube 5 feet on each side, centered on a point you choose within range. A creature takes 4d4 slashing damage when it enters the spell's area for the first time on a turn or starts its turn there. |n    When you cast this spell using a spell slot of 3rd level or higher, the damage increases by 2d4 for each slot level above 2nd.        "/>
+        <str name="page" val="Page: 222  Players Handbook     "/>
+        <list name="classes">
+            <str val="Bard"/>
+            <str val="Sorcerer"/>
+            <str val="Warlock"/>
+            <str val="Wizard"/>
+        </list>
+        <str name="url" val="https://www.dnd-spells.com/spell/cloud-of-daggers"/>
+    </dict>
+    <str name="name" val="None"/>
+    <dict name="prayer-of-healing">
+        <str name="name" val="Prayer of Healing"/>
+        <str name="school" val="Evocation"/>
+        <dict name="cast">
+            <str name="level" val=" 2"/>
+            <str name="casting time" val="10 Minutes"/>
+            <str name="range" val="30 feet"/>
+            <str name="components" val="V"/>
+            <str name="duration" val="Instantaneous"/>
+        </dict>
+        <str name="does" val="|n Up to six creatures of your choice that you can see within range each regain hit points equal to 2d8 + your spellcasting ability modifier. This spell has no effect on undead or constructs. |n    When you cast this spell using a spell slot of 3rd level or higher, the healing increases by 1d8 for each slot level above 2nd.        "/>
+        <str name="page" val="Page: 267  Players Handbook     "/>
+        <list name="classes">
+            <str val="Cleric"/>
+        </list>
+        <str name="url" val="https://www.dnd-spells.com/spell/prayer-of-healing"/>
+    </dict>
+    <dict name="guiding-bolt">
+        <str name="name" val="Guiding Bolt"/>
+        <str name="school" val="Evocation"/>
+        <dict name="cast">
+            <str name="level" val=" 1"/>
+            <str name="casting time" val="1 Action"/>
+            <str name="range" val="120 feet"/>
+            <str name="components" val="V, S"/>
+            <str name="duration" val="1 round"/>
+        </dict>
+        <str name="does" val="|n A flash of light streaks toward a creature of your choice within range.|nMake a ranged spell attack against the target. On a hit, the target takes 4d6 radiant damage, and the next attack roll made against this target before the end of your next turn has advantage, thanks to the mystical dim light glittering on the target until then. |n    When you cast this spell using a spell slot of 2nd level or higher, the damage increases by 1d6 for each slot level above 1st.        "/>
+        <str name="page" val="Page: 248  Players Handbook     "/>
+        <list name="classes">
+            <str val="Cleric"/>
+        </list>
+        <str name="url" val="https://www.dnd-spells.com/spell/guiding-bolt"/>
+    </dict>
+    <dict name="chaos-bolt">
+        <str name="name" val="Chaos Bolt"/>
+        <str name="school" val="Evocation"/>
+        <dict name="cast">
+            <str name="level" val=" 1"/>
+            <str name="casting time" val="1 Action"/>
+            <str name="range" val="120 feet"/>
+            <str name="components" val="V, S"/>
+            <str name="duration" val="Instantaneous"/>
+        </dict>
+        <str name="does" val="|n You hurl an undulating, warbling mass of chaotic energy at one creature in range. Make a ranged spell attack against the target. On a hit, the target takes 2d8 + 1d6 damage. Choose one of the d8s. The number rolled on that die determines the attacks damage type, as shown below. |nd8 / Damage Type |n1 / Acid |n2 / Cold |n3 / Fire |n4 / Force |n5 / Lightning |n6 / Poison |n7 / Psychic |n8 / Thunder |nIf you roll the same number on both d8s, the chaotic energy leaps from the target to a different creature of your choice within 30 feet of it. Make a new attack roll against the new target, and make a new damage roll, which could cause the chaotic energy to leap again. A creature can be targeted only once by each casting of this spell. |n    When you cast this spell using a spell slot of 2nd level or higher, each target takes 1d6 extra damage of the type rolled for each slot level above 1st.        "/>
+        <str name="page" val="Page: 151  from Xanathar's Guide To Everything     "/>
+        <list name="classes">
+            <str val="Sorcerer"/>
+        </list>
+        <str name="url" val="https://www.dnd-spells.com/spell/chaos-bolt"/>
+    </dict>
+    <dict name="toll-the-dead">
+        <str name="name" val="Toll the Dead"/>
+        <str name="school" val="Necromancy"/>
+        <dict name="cast">
+            <str name="level" val="Cantrip"/>
+            <str name="casting time" val="1 Action"/>
+            <str name="range" val="60 feet"/>
+            <str name="components" val="V, S"/>
+            <str name="duration" val="Instantaneous"/>
+        </dict>
+        <str name="does" val="|n You point at one creature you can see within range, and the sound of a dolorous bell fills the air around it for a moment. The target must succeed on a Wisdom saving throw or take 1d8 necrotic damage. If the target is missing any of its hit points, it instead takes 1d12 necrotic damage. |nThe spell's damage increases by one die when you reach 5th level (2d8 or 2d12), 11th level (3d8 or 3d12), and 17th level (4d8 or 4d12). |n"/>
+        <str name="page" val="Page: 169  from Xanathar's Guide To Everything     "/>
+        <list name="classes">
+            <str val="Warlock"/>
+            <str val="Wizard"/>
+            <str val="Cleric"/>
+        </list>
+        <str name="url" val="https://www.dnd-spells.com/spell/toll-the-dead"/>
+    </dict>
+    <dict name="detect-thoughts">
+        <str name="name" val="Detect Thoughts"/>
+        <str name="school" val="Divination"/>
+        <dict name="cast">
+            <str name="level" val=" 2"/>
+            <str name="casting time" val="1 Action"/>
+            <str name="range" val="Self"/>
+            <str name="components" val="V, S, M (a copper piece)"/>
+            <str name="duration" val="Concentration, up to 1 minute"/>
+        </dict>
+        <str name="does" val="|n For the duration, you can read the thoughts of certain creatures. |nWhen you cast the spell and as your action on each turn until the spell ends, you can focus your mind on any one creature that you can see within 30 feet of you. If the creature you choose has an Intelligence of 3 or lower or doesn't speak any language, the creature is unaffected. |n|nYou initially learn the surface thoughts of the creature what is most on its mind in that moment. As an action, you can either shift your attention to another creature's thoughts or attempt to probe deeper into the same creature's mind. If you probe deeper, the target must make a W isdom saving throw. If it fails, you gain insight into its reasoning (if any), its emotional state, and something that loom s large in its mind (such as something it worries over, loves, or hates). If it succeeds, the spell ends. Either way, the target knows that you are probing into its mind, and unless you shift your attention to another creature's thoughts, the creature can use its action on its turn to make an Intelligence check contested by your Intelligence check; if it succeeds, the spell ends. |n|nQuestions verbally directed at the target creature naturally shape the course of its thoughts, so this spell is particularly effective as part of an interrogation. |n|nYou can also use this spell to detect the presence of thinking creatures you can't see. When you cast the spell or as your action during the duration, you can search for thoughts within 30 feet of you. The spell can penetrate barriers, but 2 feet of rock, 2 inches of any metal other than lead, or a thin sheet of lead blocks you. You can't detect a creature with an Intelligence of 3 or lower or one that doesn't speak any language. |n|nOnce you detect the presence of a creature in this way, you can read its thoughts for the rest of the duration as described above, even if you can't see it, but it must still be within range. |n"/>
+        <str name="page" val="Page: 231  Players Handbook     "/>
+        <list name="classes">
+            <str val="Bard"/>
+            <str val="Sorcerer"/>
+            <str val="Wizard"/>
+        </list>
+        <str name="url" val="https://www.dnd-spells.com/spell/detect-thoughts"/>
+    </dict>
+    <str name="fireball-12" val="None"/>
+    <dict name="wish">
+        <str name="name" val="Wish"/>
+        <str name="school" val="Conjuration"/>
+        <dict name="cast">
+            <str name="level" val=" 9"/>
+            <str name="casting time" val="1 Action"/>
+            <str name="range" val="Self"/>
+            <str name="components" val="V"/>
+            <str name="duration" val="Instantaneous"/>
+        </dict>
+        <str name="does" val="|n Wish is the mightiest spell a mortal creature can cast. By simply speaking aloud, you can alter the very foundations of reality in accord with your desires.|n|nThe basic use of this spell is to duplicate any other spell of 8th level or lower. You don't need to meet any requirements in that spell, including costly components. The spell simply takes effect.|nAlternatively, you can create one of the following effects of your choice:|n|n* You create one object of up to 25,000 gp in value that isn't a magic item. The object can be no more than 300 feet in any dimension, and it appears in an unoccupied space you can see on the ground.|n|n* You allow up to twenty creatures that you can see to regain all hit points, and you end all effects on them described in the greater restoration spell.|n|n* You grant up to ten creatures that you can see resistance to a damage type you choose.|n|n* You grant up to ten creatures you can see immunity to a single spell or other magical effect for 8 hours. For instance, you could make yourself and all your com panions immune to a lich's life drain attack.|n|n* You undo a single recent event by forcing a reroll of any roll made within the last round (including your last turn). Reality reshapes itself to accommodate the new result. For example, a wish spell could undo an opponent's successful save, a foe's critical hit, or a friend's failed save. You can force the reroll to be made with advantage or disadvantage, and you can choose whether to use the reroll or the original roll.|n|nYou might be able to achieve something beyond the scope of the above examples. State your wish to the DM as precisely as possible. The DM has great latitude in ruling what occurs in such an instance; the greater the wish, the greater the likelihood that something goes wrong. This spell might simply fail, the effect you desire mightonlybepartlyachieved,oryoumightsuffersome unforeseen consequence as a result of how you worded the wish. For example, wishing that a villain were dead might propel you forward in time to a period when that villain is no longer alive, effectively removing you from the game. Similarly, wishing for a legendary magic item or artifact might instantly transport you to the presence of the item's current owner.|n|nThe stress of casting this spell to produce any effect other than duplicating another spell weakens you. After enduring that stress, each time you cast a spell until you finish a long rest, you take 1d10 necrotic damage per level of that spell. This damage can't be reduced or prevented in any way. In addition, your Strength drops to 3, if it isn't 3 or lower already, for 2d4 days. For each of those days that you spend resting and doing nothing more than light activity, your remaining recovery time decreases by 2 days. Finally, there is a 33 percent chance that you are unable to cast wish ever again if you suffer this stress. |n"/>
+        <str name="page" val="Page: 288  Players Handbook     "/>
+        <list name="classes">
+            <str val="Sorcerer"/>
+            <str val="Wizard"/>
+        </list>
+        <str name="url" val="https://www.dnd-spells.com/spell/wish"/>
+    </dict>
+    <dict name="remove-curse">
+        <str name="name" val="Remove Curse"/>
+        <str name="school" val="Abjuration"/>
+        <dict name="cast">
+            <str name="level" val=" 3"/>
+            <str name="casting time" val="1 Action"/>
+            <str name="range" val="Touch"/>
+            <str name="components" val="V, S"/>
+            <str name="duration" val="Instantaneous"/>
+        </dict>
+        <str name="does" val="|n At your touch, all curses affecting one creature or object end. If the object is a cursed magic item, its curse remains, but the spell breaks its owner's attunement to the object so it can be removed or discarded. |n"/>
+        <str name="page" val="Page: 271  Players Handbook     "/>
+        <list name="classes">
+            <str val="Cleric"/>
+            <str val="Paladin"/>
+            <str val="Warlock"/>
+            <str val="Wizard"/>
+        </list>
+        <str name="url" val="https://www.dnd-spells.com/spell/remove-curse"/>
+    </dict>
+    <dict name="hold-person">
+        <str name="name" val="Hold Person"/>
+        <str name="school" val="Enchantment"/>
+        <dict name="cast">
+            <str name="level" val=" 2"/>
+            <str name="casting time" val="1 Action"/>
+            <str name="range" val="60 feet"/>
+            <str name="components" val="V, S, M (a small, straight piece of iron)"/>
+            <str name="duration" val="Concentration, up to 1 minute"/>
+        </dict>
+        <str name="does" val="|n Choose a humanoid that you can see within range. The target must succeed on a Wisdom saving throw or be paralyzed for the duration. At the end of each of its turns, the target can make another Wisdom saving throw. On a success, the spell ends on the target. |n    When you cast this spell using a spell slot of 3rd level or higher, you can target one additional humanoid for each slot level above 2nd. The humanoids must be within 30 feet of each other when you target them.        "/>
+        <str name="page" val="Page: 251  Players Handbook     "/>
+        <list name="classes">
+            <str val="Bard"/>
+            <str val="Cleric"/>
+            <str val="Druid"/>
+            <str val="Sorcerer"/>
+            <str val="Warlock"/>
+            <str val="Wizard"/>
+        </list>
+        <str name="url" val="https://www.dnd-spells.com/spell/hold-person"/>
+    </dict>
+    <dict name="plant-growth">
+        <str name="name" val="Plant Growth"/>
+        <str name="school" val="Transmutation"/>
+        <dict name="cast">
+            <str name="level" val=" 3"/>
+            <str name="casting time" val="Special"/>
+            <str name="range" val="150 feet"/>
+            <str name="components" val="V, S"/>
+            <str name="duration" val="Instantaneous"/>
+        </dict>
+        <str name="does" val="|n This spell channels vitality into plants within a specific area. There are two possible uses for the spell, granting either immediate or long-term benefits.|n|nIf you cast this spell using 1 action, choose a point within range. All normal plants in a 100-foot radius centered on that point become thick and overgrown. A creature moving through the area must spend 4 feet of movement for every 1 foot it moves.|n|nYou can exclude one or more areas of any size within the spell's area from being affected.|n|nIf you cast this spell over 8 hours, you enrich the land. All plants in a half-mile radius centered on a point within range become enriched for 1 year. The plants yield twice the normal amount of food when harvested. |n"/>
+        <str name="page" val="Page: 266  Players Handbook     "/>
+        <list name="classes">
+            <str val="Bard"/>
+            <str val="Druid"/>
+            <str val="Ranger"/>
+        </list>
+        <str name="url" val="https://www.dnd-spells.com/spell/plant-growth"/>
+    </dict>
+    <str name="dalight" val="None"/>
+    <dict name="daylight">
+        <str name="name" val="Daylight"/>
+        <str name="school" val="Evocation"/>
+        <dict name="cast">
+            <str name="level" val=" 3"/>
+            <str name="casting time" val="1 Action"/>
+            <str name="range" val="60 feet"/>
+            <str name="components" val="V, S"/>
+            <str name="duration" val="1 hour"/>
+        </dict>
+        <str name="does" val="|n A 60-foot-radius sphere of light spreads out from a point you choose within range.  |nThe sphere is bright light and sheds dim light for an additional 60 feet. |n |nIf you chose a point on an object you are holding or one that isn't being worn or carried, the light shines from the object with and moves with it. Completely covering the affected object with an opaque object, such as a bowl or a helm, blocks the light. |n |nIf any of this spell's area overlaps with an area of darkness created by a spell of 3rd level or lower, the spell that created the darkness is dispelled. |n"/>
+        <str name="page" val="Page: 230  Players Handbook     "/>
+        <list name="classes">
+            <str val="Cleric"/>
+            <str val="Druid"/>
+            <str val="Paladin"/>
+            <str val="Ranger"/>
+            <str val="Sorcerer"/>
+        </list>
+        <str name="url" val="https://www.dnd-spells.com/spell/daylight"/>
+    </dict>
+    <dict name="catapult">
+        <str name="name" val="Catapult"/>
+        <str name="school" val="Transmutation"/>
+        <dict name="cast">
+            <str name="level" val=" 1"/>
+            <str name="casting time" val="1 Action"/>
+            <str name="range" val="150 feet"/>
+            <str name="components" val="S"/>
+            <str name="duration" val="Instantaneous"/>
+        </dict>
+        <str name="does" val="|n Choose one object weighing 1 to 5 pounds within range that isn't being worn or carried. The object flies in a straight line up to 90 feet in a direction you choose before falling to the ground, stopping early if it impacts against a solid surface. If the object would strike a creature, that creature must make a Dexterity saving throw. On a failed save, the object strikes the target and stops moving. In either case, both the object and the creature or solid surface take 3d8 bludgeoning damage. |nAt Higher Levels. When you cast this spell using a spell slot of 2nd level or higher, the maximum weight of objects that you can target with this spell increases by 5 pounds, and the damage increases by 1d8, for each slot level above 1st. |n"/>
+        <str name="page" val="Page: 15  from EE Players Companion      "/>
+        <list name="classes">
+            <str val="Sorcerer"/>
+            <str val="Wizard"/>
+        </list>
+        <str name="url" val="https://www.dnd-spells.com/spell/catapult"/>
+    </dict>
+    <str name="create-flame" val="None"/>
+    <str name="pas-without-trace" val="None"/>
+    <dict name="pass-without-trace">
+        <str name="name" val="Pass Without Trace"/>
+        <str name="school" val="Abjuration"/>
+        <dict name="cast">
+            <str name="level" val=" 2"/>
+            <str name="casting time" val="1 Action"/>
+            <str name="range" val="Self"/>
+            <str name="components" val="V, S, M (ashes from a burned leaf of mistletoe and a sprig of spruce)"/>
+            <str name="duration" val="Concentration, up to 1 hour"/>
+        </dict>
+        <str name="does" val="|n A veil of shadows and silence radiates from you, masking you and your companions from detection.|nFor the duration, each creature you choose within 30 feet of you (including you) has a +10 bonus to Dexterity (Stealth) checks and can't be tracked except by magical means. A creature that receives this bonus leaves behind no tracks or other traces of its passage. |n"/>
+        <str name="page" val="Page: 264  Players Handbook     "/>
+        <list name="classes">
+            <str val="Druid"/>
+            <str val="Ranger"/>
+        </list>
+        <str name="url" val="https://www.dnd-spells.com/spell/pass-without-trace"/>
+    </dict>
+    <str name="gias" val="None"/>
+    <dict name="geas">
+        <str name="name" val="Geas"/>
+        <str name="school" val="Enchantment"/>
+        <dict name="cast">
+            <str name="level" val=" 5"/>
+            <str name="casting time" val="1 Minute"/>
+            <str name="range" val="60 feet"/>
+            <str name="components" val="V"/>
+            <str name="duration" val="30 days"/>
+        </dict>
+        <str name="does" val="|n You place a magical command on a creature that you can see within range, forcing it to carry out some service or refrain from some action or course of actiity as you decide.|nIf the creature can understand you, it must succeed on a Wisdom saving throw or become charmed by you for the duration. While the creature is charmed by you, it takes 5d10 psychic damage each time it acts in a manner directly counter to your instructions, but no more than once each day. A creature that can't understand you is unaffected by the spell.|n|nYou can issue any command you choose, short of an activity that would result in certain death. Should you issue a suicidal command, the spell ends. You can end the spell early by using an action to dismiss it. A remove curse, greater restoration, or wish spell also ends it. |n    When you cast this spell usinga spell slot of 7th or 8th level, the duration is 1 year. When you cast this spell using a spell slot of 9th level, the spell lasts until it is ended by one of the spells mentioned above.        "/>
+        <str name="page" val="Page: 245  Players Handbook     "/>
+        <list name="classes">
+            <str val="Bard"/>
+            <str val="Cleric"/>
+            <str val="Druid"/>
+            <str val="Paladin"/>
+            <str val="Wizard"/>
+        </list>
+        <str name="url" val="https://www.dnd-spells.com/spell/geas"/>
+    </dict>
+    <dict name="detect-magic">
+        <str name="name" val="Detect Magic (Ritual)"/>
+        <str name="school" val="Divination"/>
+        <dict name="cast">
+            <str name="level" val=" 1"/>
+            <str name="casting time" val="1 Action"/>
+            <str name="range" val="Self"/>
+            <str name="components" val="V, S"/>
+            <str name="duration" val="Concentration, up to 10 minutes"/>
+        </dict>
+        <str name="does" val="|n For the duration, you sense the presence of magic within 30 feet of you. If you sense magic in this way, you can use your action to see a faint aura around any visible creature or object in the area that bears magic, and you learn its school of magic, if any. |n|nThe spell can penetrate most barriers, but is blocked by 1 foot of stone, 1 inch of common metal, a thin sheet of lead, or 3 feet of wood or dirt. |n"/>
+        <str name="page" val="Page: 231  Players Handbook     "/>
+        <list name="classes">
+            <str val="Bard"/>
+            <str val="Cleric"/>
+            <str val="Druid"/>
+            <str val="Paladin"/>
+            <str val="Ranger"/>
+            <str val="Sorcerer"/>
+            <str val="Wizard"/>
+        </list>
+        <str name="url" val="https://www.dnd-spells.com/spell/detect-magic-ritual"/>
+    </dict>
+    <str name="gift-of-gab" val="None"/>
+    <str name="jims-magic-missile" val="None"/>
+    <dict name="augury">
+        <str name="name" val="Augury (Ritual)"/>
+        <str name="school" val="Divination"/>
+        <dict name="cast">
+            <str name="level" val=" 2"/>
+            <str name="casting time" val="1 Minute"/>
+            <str name="range" val="Self"/>
+            <str name="components" val="V, S, M (specially marked sticks, bones, or similar tokens worth at least 25 gp)"/>
+            <str name="duration" val="Instantaneous"/>
+        </dict>
+        <str name="does" val="|n By casting gem-inlaid sticks, rolling dragon bones, laying out ornate cards, or employing some other divining tool, you receive an omen from an otherworldly entity about the results of a specific course of action that you plan to take within the next 30 minutes. The DM chooses from the following possible omens: |n |n* Weal, for good results  |n* Woe, for bad results  |n* Weal and woe, for both good and bad results  |n* Nothing, for results that aren't especially good or bad |n |nThe spell doesn't take into account any possible circumstances that might change the outcome, such as the casting of additional spells or the loss or gain of a companion. If you cast the spell two or more times before completing your next long rest, there is a cumulative 25 percent chance for each casting after the first that you get a random reading. The DM makes this roll in secret. |n"/>
+        <str name="page" val="Page: 215  Players Handbook     "/>
+        <list name="classes">
+            <str val="Cleric"/>
+        </list>
+        <str name="url" val="https://www.dnd-spells.com/spell/augury-ritual"/>
+    </dict>
 </dict>

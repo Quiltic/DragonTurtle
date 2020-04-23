@@ -67,3 +67,14 @@
 |CHA: 14
 |Skills: Animal Handling, Insight, Nature, Perception
 |URL: https://www.dungeonmastersvault.com/pages/dnd/5e/characters/17592201290099
+
+
+Dagger 1d4 + Proficiency + max(DEX,STR) piercing
+Rapier 1d8 + Proficiency + max(DEX,STR) piercing
+Shortsword 1d6 + Proficiency + max(DEX,STR) piercing
+
+Mace 1d6 + Proficiency + STR bludgeoning
+Dart 1d4 + Proficiency + max(DEX,STR) piercing
+
+Greataxe 1d12 + Proficiency + STR slashing
+Greatsword 2d6 + Proficiency + STR slashing

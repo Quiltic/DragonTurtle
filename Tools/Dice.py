@@ -13,6 +13,8 @@ if __name__ == "__main__":
     bot = commands.Bot(";")
     bertle = 275002179763306517
 
+    
+
 from random import randrange
 
 try:
@@ -21,8 +23,6 @@ except:
     import os
     os.system("python3 -m pip install git+https://github.com/Quiltic/JTools.git")
     from JTools import find_all #, flattenList, cutUp
-
-
 
 
 def flattenList(lst): # in newer version of Jtools but no yet implementinted into git 
@@ -71,7 +71,7 @@ def diceBase(*args):
     data = {'total': 0}
 
     if len(args) != 0:
-        inpt = ''.join(args).replace(' ','').lower() # achual input
+        inpt = ''.join(args).replace(' ','').lower().replace('--','-').replace('-+','-') # achual input
         #print(inpt)
 
         if 'adv' in inpt: # advantage
@@ -96,15 +96,19 @@ def diceBase(*args):
             data['total'] = min(data['try1']['total'],data['try2']['total'])
         
         
-        else: # normal rolls        
+        else: # normal rolls
+
+            if ('d' not in inpt): # basicly if you have ('+3') as input
+                inpt = '1d20' + inpt 
+
             tps = ['+','-','*','/'] # types of things in the list that we want to look for
             loc = flattenList([find_all(inpt,a) for a in tps]) # all of the things get made into list (probably easer way fo finding this but eah)
             loc.sort() # sort doesent return anything for some reason so this needs its own line
             #print(loc)
 
+            
             inpt = cutUp(inpt, loc) # we need all of the segments individualy
-            if (len(inpt) == 1) and ('d' not in inpt[0]): # basicly if you have ('+3') as input
-                inpt = ['1d20'] + inpt 
+            
             #print(inpt)
             
             specialTypes = ['strength','dexterity','constitution','intelligence','wisdom','charisma','acrobatics','animalhandling','arcana','athletics','deception','history','insight','intimidation','investigation','medicine','nature','perception','performance','persuasion','religion','sleightofhand','stealth','survival'] # thease are all skills in D&D... 
@@ -114,8 +118,11 @@ def diceBase(*args):
                     d = diceRoller(a) # temp variabel
                     data[d[0]] = d[1]
                     data['total'] += sum(d[1]) # yay totals
+                
+                elif a in tps:# fail safe
+                    pass
 
-                elif a not in specialTypes: # for +, -, /, *
+                elif a not in specialTypes: # fail safe but mostly for +, -
                     data[a] = [int(a)] 
                     data['total'] += int(a) # yay totals
                 
@@ -148,6 +155,90 @@ def diceRoller(string):
 
     return((string,vals))
 
+
+def quick_combiner(roll):
+    '''
+    takes in a roll and gives what it should say
+    '''
+    say = '' # what say you
+    for a in roll:
+        if (a != 'total') and (a != 'speak'):
+            say += ' ' + a 
+            if 'd' in a:
+                say += ' ' + str(roll[a])
+    return(say)
+
+
+async def bitReplacer(ctx, using, *args):
+    specialTypes = ['strength','dexterity','constitution','intelligence','wisdom','charisma','acrobatics','animalhandling','arcana','athletics','deception','history','insight','intimidation','investigation','medicine','nature','perception','performance','persuasion','religion','sleightofhand','stealth','survival'] # thease are all skills in D&D... 
+    try:
+        things = list(args)
+        for a in range(len(args)):
+            for b in specialTypes:
+                
+                temp = args[a].lower().replace('+','').replace('-','').replace('*','').replace('/','')
+
+                if temp == '':
+                    pass
+                elif temp in "proficiency":
+                    things[a] = str(using[str(ctx.author)]['Proficiency']) # replace
+
+                    if '-' not in things[a]:
+                        things[a] = '+'+things[a] # no + is there when origionaly dealing with thing
+                    break # dont need to keep looking onwards
+
+                elif temp in b:
+                    #print(b)
+                    things[a] = str(using[str(ctx.author)]['Skills'][b]) # replace
+                    #print('hi')
+                    if '-' not in things[a]:
+                        things[a] = '+'+things[a] # no + is there when origionaly dealing with thing
+
+                    await sendmsg(ctx,"Rolling for {}! {}".format(b,things[a])) # eah might as well
+                    break # dont need to keep looking onwards
+                    #print('hi')
+    except KeyError:
+        return(None)
+        #await sendmsg(ctx,"Improper skill name! {}".format(args[a]))
+    except Exception as e:
+        print(e)
+    
+    return(things)
+
+'''
+[]customroll |Name: random
+|Main Roll: 1d4
+|Second Roll: __
+|Table info (do * # DOES):
+* 1 dance
+* 2 fly
+* 3 jump
+* 4 `1d4` cold damage
+'''
+
+def CustomRollMaker(ctx,*args):
+    custRoll = {'Name': '', 'Main Roll': '1d20', 'Second Roll': None, 'Table info (do * # DOES)':{}}
+    msg = ' '.join(args).split('|')[1:]
+    print(msg)
+
+    for a in msg:
+        #print(a)
+        splt = a.index(': ')
+        #print(a[:splt], a[splt+2:])
+        if a[:splt] == 'Table info (do * # DOES)':
+            #print('hi)')
+            tablestuff = a[splt+2:].split('* ')
+            #print(tablestuff)
+            for data in tablestuff:
+                if data != '':
+                    splt = data.index(' ')
+                    custRoll['Table info (do * # DOES)'][str(data[:splt])] = str(data[splt+1:])
+
+        elif (a[splt+2:-1] != '__') and (a[splt+2:-1] != '___'):
+            custRoll[a[:splt]] = a[splt+2:-1]
+        
+    print(custRoll)
+    return(custRoll)
 
 
 # for testing

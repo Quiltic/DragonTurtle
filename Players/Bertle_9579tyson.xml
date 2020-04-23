@@ -1,6 +1,6 @@
 <?xml version="1.0" ?>
 <dict>
-    <str name="Current HP" val="39 "/>
+    <int name="Current HP" val="45"/>
     <int name="Spell Save" val="15"/>
     <int name="Proficiency" val="3"/>
     <int name="Spell Attack" val="7"/>
@@ -12,11 +12,11 @@
     <str name="CON" val="13 "/>
     <int name="Challenge Rating" val="0"/>
     <str name="DEX" val="6 "/>
-    <str name="HP" val="39 "/>
+    <str name="HP" val="45 "/>
     <str name="INT" val="18 "/>
     <int name="Passive Perception" val="10"/>
     <str name="STR" val="12 "/>
-    <str name="Total Level" val="6 "/>
+    <str name="Total Level" val="7 "/>
     <str name="Speed" val="30ft "/>
     <str name="Main Class" val="Artificer "/>
     <str name="WIS" val="13 "/>
