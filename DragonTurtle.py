@@ -3,6 +3,7 @@ websites used
 https://emojipedia.org/open-book/
 https://cog-creators.github.io/discord-embed-sandbox/
 https://leovoel.github.io/embed-visualizer/
+https://en.wikipedia.org/wiki/Miscellaneous_Symbols
 '''
 
 from Tools.Tools import *
@@ -42,7 +43,8 @@ bot = commands.Bot(prefix)#, connector=aiohttp.TCPConnector(ssl=False)
 curr_status = discord.Activity(name="dragon sounds. | []help", type=discord.ActivityType.listening)
 
 deck_of_cards = {'Playing Card': ['A♤', '2♤', '3♤', '4♤', '5♤', '6♤', '7♤', '8♤', '9♤', '10♤', 'J♤', 'Q♤', 'K♤', 'A♡', '2♡', '3♡', '4♡', '5♡', '6♡', '7♡', '8♡', '9♡', '10♡', 'J♡', 'Q♡', 'K♡', 'A♢', '2♢', '3♢', '4♢', '5♢', '6♢', '7♢', '8♢', '9♢', '10♢', 'J♢', 'Q♢', 'K♢', 'A♧', '2♧', '3♧', '4♧', '5♧', '6♧', '7♧', '8♧', '9♧', '10♧', 'J♧', 'Q♧', 'K♧']}
-curent_card = {'Playing Card': 0} # location of current cards
+curent_card = {'Playing Card': 0 , 'Poker': 0} # location of current cards
+deck_of_cards['Poker'] = deck_of_cards['Playing Card'] * 4
 
 #get home directory
 cwd = os.getcwd()
@@ -187,7 +189,7 @@ async def shuffle(ctx, *deck):
 
         if name == '':
             name = 'Playing Card'
-        else:
+        elif name not in curent_card:
             name = 'No' # No deck suffled
         
         deck_of_cards[name] = shuffleDeck(deck_of_cards[name])
@@ -212,7 +214,7 @@ async def showdeck(ctx, *deck):
             name = 'Playing Card'
             print(deck_of_cards[name])
             #deck_of_cards = shuffleDeck(deck_of_cards)
-        else:
+        elif name not in curent_card:
             name = 'No' # No deck suffled
 
         await sendmsg(ctx,deck_of_cards[name])
@@ -277,8 +279,8 @@ async def cards(amount, *deck):
 
         if name == '':
             name = 'Playing Card'
-        else:
-            name = 'No'
+        elif name not in curent_card:
+            name = 'No' # No deck suffled
 
         visuals = str(deck_of_cards[name][curent_card[name]:curent_card[name]+amount]).replace("'",'').replace('[','').replace(']','') # cleanup
         #await sendmsg(ctx,"Drew **{}**!".format(visuals))
@@ -397,6 +399,7 @@ async def discard(ctx, *cards):
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 ###################### Player Commands ###################
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+# How do you dodge a FIREBALL!
 @bot.command()
 async def save(ctx, tpe):
     '''
@@ -428,6 +431,16 @@ async def save(ctx, tpe):
         print('Error: ', e)
     
 
+# Check. Your turn
+@bot.command()
+async def check(ctx, *stuff):
+    '''
+    Make a ___ check
+    '''
+    await r(ctx, *stuff)
+
+
+# IM FAST AS #*$& BOIIII
 @bot.command()
 async def init(ctx, *args):
     '''
@@ -448,6 +461,85 @@ async def init(ctx, *args):
         print('Error: ', e)
 
 
+# CASH MONY BABY! 
+@bot.command()
+async def gold(ctx, val = 0.0):
+    """
+    Change your gold count!
+    """
+    global using
+
+    try:
+        amount = float(val)
+        print(amount)
+
+
+        gold = int(amount) # off the idea that gold = 1
+        #print(round((amount-gold),2))
+        silver = int(round((amount-gold),2)*10) # off the idea that silver = .1
+        copper = int(round((amount-gold-(silver/10)),3)*100) # off the idea that copper = .01
+
+        print(gold,silver,copper)
+
+        try:
+            using[str(ctx.author)]['Gold'] += gold
+        except:
+            using[str(ctx.author)]['Gold'] = gold
+
+        try:
+            using[str(ctx.author)]['Silver'] += silver
+        except:
+            using[str(ctx.author)]['Silver'] = silver
+
+        try:
+            using[str(ctx.author)]['Copper'] += copper
+        except:
+            using[str(ctx.author)]['Copper'] = copper
+
+        #'''
+
+        if amount != 0:
+            pass
+            
+            cash = discord.Embed(title="{}'s Cash Money".format(using[str(ctx.author)]["Name"][:-1]), description="Gold: **{}**".format(using[str(ctx.author)]['Gold']), color=0xedd030)
+            
+            if using[str(ctx.author)]['Silver']:
+                cash.add_field(name="Silver: `{}`".format(using[str(ctx.author)]['Silver']), value="Silver change: {} + {}".format(using[str(ctx.author)]['Silver']-silver,silver), inline=True)
+            if using[str(ctx.author)]['Copper']:
+                cash.add_field(name="Copper: `{}`".format(using[str(ctx.author)]['Copper']), value="Copper change: {} + {}".format(using[str(ctx.author)]['Copper']-copper,copper), inline=True)
+
+            cash.set_footer(text="Gold Change: {} + {}".format(int(using[str(ctx.author)]['Gold'])-gold,gold))
+
+            
+            Save(('Players\\'+str(ctx.author).replace('#','_').replace(' ','') + using[str(ctx.author)]['Name'].lower().replace(' ','')), using[str(ctx.author)])
+            Save('ActiveUsing',using)
+            
+        else:
+            cash = discord.Embed(title="{}'s Cash Money".format(using[str(ctx.author)]["Name"][:-1]), description="Gold: **{}**".format(using[str(ctx.author)]['Gold']), color=0xedd030)
+            
+            if using[str(ctx.author)]['Silver']:
+                cash.add_field(name="Silver", value='`{}`'.format(using[str(ctx.author)]['Silver']), inline=True)
+            if using[str(ctx.author)]['Copper']:
+                cash.add_field(name="Copper", value='`{}`'.format(using[str(ctx.author)]['Copper']), inline=True)
+        
+        #'''
+        #await sendmsg(ctx,"{} {} {}".format(gold,silver,copper))
+        await sendmsg(ctx, embed=cash)
+
+    except Exception as e:
+        print(e)
+        await sendmsg(ctx, "GOLD ERROR: {}".format(e))    
+
+@bot.command()
+async def silver(ctx, val = 0.0):
+    await gold(ctx,float(val/10))
+
+@bot.command()
+async def copper(ctx, val = 0.0):
+    await gold(ctx,float(val/100))
+
+
+# Holy sounds
 @bot.command()
 async def heal(ctx, damage):
     '''
@@ -469,6 +561,7 @@ async def heal(ctx, damage):
         print('Error: ', e)
 
 
+# demonic sounds
 @bot.command()
 async def hurt(ctx, damage):
     '''
@@ -490,6 +583,7 @@ async def hurt(ctx, damage):
         print('Error: ', e)
 
 
+# Newby huh?
 @bot.command()
 async def character(ctx, *args):
     info = {'Spell Save': 10, 'Proficiency': 1,'Spell Attack': 1,'Name': 'NAMELESS', 'URL': None, 'AC': 10, 'Alignment': 'Unaligned', 'CHA': 10, 'CON': 10, 'Challenge Rating': 0, 'DEX': 10, 'HP': 10, 'INT': 10, 'Passive Perception': 10, 'STR': 10, 'Total Level': 1, 'Skills': 'Perception +3, Stealth +4', 'Speed': '30ft', 'Main Class': 'Fighter', 'WIS': 10}
@@ -547,7 +641,7 @@ async def character(ctx, *args):
         #print(*args)
         
 
-#
+# SUP IM NASND
 @bot.command()
 async def player(ctx, *args):
     global using

@@ -48,4 +48,7 @@
         <int name="survival" val="1"/>
     </dict>
     <int name="Initiative" val="-2"/>
+    <int name="Gold" val="128"/>
+    <int name="Silver" val="6"/>
+    <int name="Copper" val="0"/>
 </dict>

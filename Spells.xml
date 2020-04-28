@@ -1102,4 +1102,43 @@
         </list>
         <str name="url" val="https://www.dnd-spells.com/spell/augury-ritual"/>
     </dict>
+    <str name="clarvoance" val="None"/>
+    <str name="clarvoice" val="None"/>
+    <dict name="clairvoyance">
+        <str name="name" val="Clairvoyance"/>
+        <str name="school" val="Divination"/>
+        <dict name="cast">
+            <str name="level" val=" 3"/>
+            <str name="casting time" val="10 Minutes"/>
+            <str name="range" val="1 mile"/>
+            <str name="components" val="V, S, M  (a focus worth at least 100 gp, either a jeweled horn for hearing or a glass eye for seeing"/>
+            <str name="duration" val="Concentration, up to 10 minutes"/>
+        </dict>
+        <str name="does" val="|n You create an invisible sensor within range in a location familiar to you (a place you have visited or seen before) or in an obvious location that is unfamiliar to you (such as behind a door, around a corner, or in a grove of trees). The sensor remains in place for the duration, and it can't be attacked or otherwise interacted with. |n|nWhen you cast the spell, you choose seeing or hearing. You can use the chosen sense through the sensor as if you were in its space. As your action, you can switch between seeing and hearing. A creature that can see the sensor (such as a creature benefitting from see invisibility or truesight) sees a luminous, intangible orb about the size of your fist. |n"/>
+        <str name="page" val="Page: 222  Players Handbook     "/>
+        <list name="classes">
+            <str val="Bard"/>
+            <str val="Cleric"/>
+            <str val="Sorcerer"/>
+            <str val="Wizard"/>
+        </list>
+        <str name="url" val="https://www.dnd-spells.com/spell/clairvoyance"/>
+    </dict>
+    <dict name="arcane-eye">
+        <str name="name" val="Arcane Eye"/>
+        <str name="school" val="Divination"/>
+        <dict name="cast">
+            <str name="level" val=" 4"/>
+            <str name="casting time" val="1 Action"/>
+            <str name="range" val="30 feet"/>
+            <str name="components" val="V, S, M (a bit of bat fur)"/>
+            <str name="duration" val="Concentration, up to 1 hour"/>
+        </dict>
+        <str name="does" val="|n You create an invisible, magical eye within range that hovers in the air for the duration.  |nYou mentally receive visual information from the eye, which has normal vision and darkvision out to 30 feet. The eye can look in every direction.  |nAs an action, you can move the eye up to 30 feet in any direction. There is no limit to how far away from you the eye can move, but it can't enter another plane of existence. A solid barrier blocks the eye's movement, but the eye can pass through an opening as small as 1 inch in diameter. |n"/>
+        <str name="page" val="Page: 214  Players Handbook     "/>
+        <list name="classes">
+            <str val="Wizard"/>
+        </list>
+        <str name="url" val="https://www.dnd-spells.com/spell/arcane-eye"/>
+    </dict>
 </dict>

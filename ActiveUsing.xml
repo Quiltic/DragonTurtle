@@ -1,54 +1,57 @@
 <?xml version="1.0" ?>
 <dict>
     <dict name="Bertle#9579">
-        <int name="Current HP" val="3"/>
+        <int name="Current HP" val="45"/>
         <int name="Spell Save" val="15"/>
         <int name="Proficiency" val="3"/>
         <int name="Spell Attack" val="7"/>
-        <str name="Name" val="Goli "/>
-        <str name="URL" val="https://www.dungeonmastersvault.com/pages/dnd/5e/characters/17592201290099"/>
-        <str name="AC" val="13 "/>
+        <str name="Name" val="Tyson "/>
+        <str name="URL" val="https://www.dungeonmastersvault.com/pages/dnd/5e/characters/17592210050232"/>
+        <str name="AC" val="15 "/>
         <str name="Alignment" val="Unaligned"/>
-        <str name="CHA" val="14 "/>
-        <str name="CON" val="1 "/>
+        <str name="CHA" val="13 "/>
+        <str name="CON" val="13 "/>
         <int name="Challenge Rating" val="0"/>
-        <str name="DEX" val="12 "/>
-        <str name="HP" val="3 "/>
-        <str name="INT" val="17 "/>
+        <str name="DEX" val="6 "/>
+        <str name="HP" val="45 "/>
+        <str name="INT" val="18 "/>
         <int name="Passive Perception" val="10"/>
-        <str name="STR" val="13 "/>
-        <str name="Total Level" val="6 "/>
+        <str name="STR" val="12 "/>
+        <str name="Total Level" val="7 "/>
         <str name="Speed" val="30ft "/>
-        <str name="Main Class" val="Druid "/>
-        <str name="WIS" val="18 "/>
-        <str name="Skills Prof" val="Animal Handling, Insight, Nature, Perception ,"/>
+        <str name="Main Class" val="Artificer "/>
+        <str name="WIS" val="13 "/>
+        <str name="Skills Prof" val="Arcana, Investigation, Medicine, Perception ,"/>
         <dict name="Skills">
-            <int name="dexterity" val="1"/>
-            <int name="wisdom" val="4"/>
-            <int name="intelligence" val="3"/>
+            <int name="dexterity" val="-2"/>
+            <int name="wisdom" val="1"/>
+            <int name="intelligence" val="4"/>
             <int name="strength" val="1"/>
-            <int name="constitution" val="-5"/>
-            <int name="charisma" val="2"/>
-            <int name="acrobatics" val="1"/>
-            <int name="animalhandling" val="7"/>
-            <int name="arcana" val="3"/>
+            <int name="constitution" val="1"/>
+            <int name="charisma" val="1"/>
+            <int name="acrobatics" val="-2"/>
+            <int name="animalhandling" val="1"/>
+            <int name="arcana" val="7"/>
             <int name="athletics" val="1"/>
-            <int name="deception" val="2"/>
-            <int name="history" val="3"/>
-            <int name="insight" val="7"/>
-            <int name="intimidation" val="2"/>
-            <int name="investigation" val="3"/>
+            <int name="deception" val="1"/>
+            <int name="history" val="4"/>
+            <int name="insight" val="1"/>
+            <int name="intimidation" val="1"/>
+            <int name="investigation" val="7"/>
             <int name="medicine" val="4"/>
-            <int name="nature" val="6"/>
-            <int name="perception" val="7"/>
-            <int name="performance" val="2"/>
-            <int name="persuasion" val="2"/>
-            <int name="religion" val="3"/>
-            <int name="sleightofhand" val="1"/>
-            <int name="stealth" val="1"/>
-            <int name="survival" val="4"/>
+            <int name="nature" val="4"/>
+            <int name="perception" val="4"/>
+            <int name="performance" val="1"/>
+            <int name="persuasion" val="1"/>
+            <int name="religion" val="4"/>
+            <int name="sleightofhand" val="-2"/>
+            <int name="stealth" val="-2"/>
+            <int name="survival" val="1"/>
         </dict>
-        <int name="Initiative" val="1"/>
+        <int name="Initiative" val="-2"/>
+        <int name="Gold" val="128"/>
+        <int name="Silver" val="6"/>
+        <int name="Copper" val="0"/>
     </dict>
     <dict name="Feltheleb#5067">
         <int name="Current HP" val="20"/>
@@ -99,6 +102,7 @@
             <int name="survival" val="2"/>
         </dict>
         <int name="Initiative" val="0"/>
+        <str name="Card Hand" val=""/>
     </dict>
     <dict name="Draco#9158">
         <int name="Current HP" val="44"/>
@@ -149,6 +153,8 @@
             <int name="survival" val="0"/>
         </dict>
         <int name="Initiative" val="2"/>
+        <str name="Card Hand" val=""/>
+        <int name="Gold" val="67"/>
     </dict>
     <dict name="fops#1969">
         <int name="Current HP" val="59"/>
@@ -199,6 +205,8 @@
             <int name="survival" val="4"/>
         </dict>
         <int name="Initiative" val="1"/>
+        <str name="Card Hand" val=""/>
+        <int name="Gold" val="575"/>
     </dict>
     <dict name="noss#0773">
         <int name="Current HP" val="66"/>
@@ -249,6 +257,7 @@
             <int name="survival" val="1"/>
         </dict>
         <int name="Initiative" val="3"/>
+        <str name="Card Hand" val=""/>
     </dict>
     <dict name="Screenshare#7248">
         <int name="Current HP" val="45"/>
@@ -299,6 +308,7 @@
             <int name="survival" val="1"/>
         </dict>
         <int name="Initiative" val="3"/>
+        <str name="Card Hand" val=""/>
     </dict>
     <dict name="Rolls">
         <dict name="Bertle#9579random ">
@@ -312,6 +322,7 @@
                 <str name="4" val="`1d4` cold damage"/>
             </dict>
         </dict>
+        <str name="Card Hand" val=""/>
     </dict>
     <dict name="Mii-Sama#3255">
         <int name="Current HP" val="52"/>
@@ -362,5 +373,6 @@
             <int name="survival" val="1"/>
         </dict>
         <int name="Initiative" val="3"/>
+        <str name="Card Hand" val=""/>
     </dict>
 </dict>

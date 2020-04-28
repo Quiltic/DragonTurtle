@@ -48,4 +48,6 @@
         <int name="survival" val="4"/>
     </dict>
     <int name="Initiative" val="1"/>
+    <str name="Card Hand" val=""/>
+    <int name="Gold" val="575"/>
 </dict>

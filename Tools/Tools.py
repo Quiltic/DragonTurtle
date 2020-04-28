@@ -172,13 +172,15 @@ def get_modifyer(main, typ):
 ###################### Cards Commands ###################
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-def shuffleDeck(deck, times = 4, amount = 26):
+def shuffleDeck(deck, times = 4, amount = -1):
     '''
     suffles a deck
     shuffle(deck, times = 4, amount = 20) : gives a deck randomly suffled
     shuffle(deck, 6) better shuffle
     shuffle(deck, 12, 40) insane shuffle
     '''
+    if amount < 0:
+        amount = int(len(deck)/2)
     cards = list(deck) # clone
     #print(cards)
     for _ in range(times):
