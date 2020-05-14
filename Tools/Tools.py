@@ -327,9 +327,9 @@ def offenceSpell(spell):
 
     try:
         # upgrades
-        place = spell['does'].index("increases by ")
+        place = spell['does'].index("damage increases by ")
         #print(place+13,spell['does'][place+13:].index(' ')+place+13)
-        offencive['higherLvl'] = spell['does'][place+13:spell['does'][place+13:].index(' ')+place+13] # +13 is from "increases by "
+        offencive['higherLvl'] = spell['does'][place+20:spell['does'][place+20:].index(' ')+place+20].replace(',','') # +13 is from "increases by "
     except ValueError:
         #print('no save')
         pass

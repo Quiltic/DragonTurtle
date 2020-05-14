@@ -62,6 +62,7 @@ def cutUp(string, lst): # in newer version of Jtools but no yet implementinted i
 def randomnum(low,high):
     return randrange(low,high+1)
 
+
 # dice dice baby
 def diceBase(*args):
     '''
@@ -126,9 +127,6 @@ def diceBase(*args):
                     data[a] = [int(a)] 
                     data['total'] += int(a) # yay totals
                 
-                else:
-                    pass # oh god not yet
-
             #print(data)
 
     else: # flat d20
@@ -143,7 +141,7 @@ def diceRoller(string):
     '''
     This is for dice rolling IE 1d6 4d12 exct
     '''
-    data = string.split('d')
+    data = string.split('d') # get a split of the dice
     #print(data)
     mult = 1 # for negitives
     if '-' in data[0]:
@@ -151,7 +149,7 @@ def diceRoller(string):
 
     data[0] = data[0].replace('-','').replace('+','').replace('*','').replace('/','') # cleanup
 
-    vals = [mult*randomnum(1,int(data[1])) for _ in range(int(data[0]))]
+    vals = [mult*randomnum(1,int(data[1])) for _ in range(int(data[0]))] # roll the dice alot
 
     return((string,vals))
 
@@ -162,49 +160,85 @@ def quick_combiner(roll):
     '''
     say = '' # what say you
     for a in roll:
-        if (a != 'total') and (a != 'speak'):
-            say += ' ' + a 
+        if (a != 'total') and (a != 'speak'): # so we dont edit the wrong things
+            say += ' ' + a # space
             if 'd' in a:
-                say += ' ' + str(roll[a])
+                val = a.index('d') # find val
+                val = ['{}]'.format(a[val+1:]), '**{}**]'.format(a[val+1:]),'{}, '.format(a[val+1:]), '**{}**, '.format(a[val+1:])] # replace vals with bold
+                say += ' ' + str(roll[a]).replace('1]','**1**]').replace(' 1,',' **1**,').replace(val[0],val[1]).replace(val[2],val[3]) # true replace
     return(say)
 
 
 async def bitReplacer(ctx, using, *args):
+    '''
+    Corrects the values for special types when rolling
+    '''
     specialTypes = ['strength','dexterity','constitution','intelligence','wisdom','charisma','acrobatics','animalhandling','arcana','athletics','deception','history','insight','intimidation','investigation','medicine','nature','perception','performance','persuasion','religion','sleightofhand','stealth','survival'] # thease are all skills in D&D... 
     try:
-        things = list(args)
-        for a in range(len(args)):
-            for b in specialTypes:
+        things = list(args) # make it into a list for ease of acsess
+        for a in range(len(args)): # iterate through the list
+            for b in specialTypes: # if it is a special type
                 
-                temp = args[a].lower().replace('+','').replace('-','').replace('*','').replace('/','')
+                temp = args[a].lower().replace('+','').replace('-','').replace('*','').replace('/','') # cleanup
 
-                if temp == '':
+                if temp == '': # empty val. strangely needed
                     pass
-                elif temp in "proficiency":
+                elif temp in "proficiency": # if its the word proficiency
                     things[a] = str(using[str(ctx.author)]['Proficiency']) # replace
 
                     if '-' not in things[a]:
                         things[a] = '+'+things[a] # no + is there when origionaly dealing with thing
                     break # dont need to keep looking onwards
 
-                elif temp in b:
+                elif temp in b: # in specialtypes 
                     #print(b)
                     things[a] = str(using[str(ctx.author)]['Skills'][b]) # replace
                     #print('hi')
                     if '-' not in things[a]:
                         things[a] = '+'+things[a] # no + is there when origionaly dealing with thing
 
-                    await sendmsg(ctx,"Rolling for {}! {}".format(b,things[a])) # eah might as well
+                    await ctx.send("Rolling for {}! {}".format(b,things[a])) # eah might as well
                     break # dont need to keep looking onwards
                     #print('hi')
     except KeyError:
-        return(None)
+        return(None) # wrong skill names
         #await sendmsg(ctx,"Improper skill name! {}".format(args[a]))
     except Exception as e:
-        print(e)
+        print(type(e),e)
     
     return(things)
 
+
+
+'''
+def diceCleanup(stuff):
+    print(stuff)
+    stuff['speak'] = stuff['speak'].replace('1]','**1**]').replace('1,','**1**,')
+    #print(stuff['speak'])
+    iteration = 0
+    for a in stuff:
+        if (a != 'total') and (a != 'speak'):
+            try:
+                val = a.index('d')
+                print(stuff['speak'][iteration+1:])
+                if val:
+                    #[]r 6d6 +4d4 +3
+                    print('val',a[val+1:])
+                    val = ['{}]'.format(a[val+1:]), '**{}**]'.format(a[val+1:]),'{},'.format(a[val+1:]), '**{}**,'.format(a[val+1:])]
+                    print(stuff['speak'][iteration+1:stuff['speak'][iteration+1:].index(']')+2].replace(val[0],val[1]).replace(val[2],val[3]))
+                    stuff['speak'] = stuff['speak'][:iteration+2] + stuff['speak'][iteration+1:stuff['speak'][iteration+1:].index(']')+2].replace(val[0],val[1]).replace(val[2],val[3]) + stuff['speak'][stuff['speak'][iteration+1:].index(']')+1:]
+
+                    #print('iter',iteration)
+                    iteration = str(stuff['speak'][iteration+1:]).index(']')+1
+                    print('iter',iteration)
+                    
+                    
+            except Exception as e:
+                print(type(e),e)
+    #print(stuff['speak'])
+    return(stuff['speak'])
+
+'''
 '''
 []customroll |Name: random
 |Main Roll: 1d4
@@ -216,26 +250,39 @@ async def bitReplacer(ctx, using, *args):
 * 4 `1d4` cold damage
 '''
 
+
+
+'''
+[]customroll |Name: spear
+|Main Roll: 1d20 + str + prof
+|Second Roll: 1d6 + str
+|Table info (do * # DOES):
+* __ __
+'''
 def CustomRollMaker(ctx,*args):
-    custRoll = {'Name': '', 'Main Roll': '1d20', 'Second Roll': None, 'Table info (do * # DOES)':{}}
-    msg = ' '.join(args).split('|')[1:]
+    '''
+    make custom rolls
+    returns: {'Name': '', 'Main Roll': '1d20', 'Second Roll': None, 'Table info (do * # DOES)':{}} # base
+    '''
+    custRoll = {'Name': '', 'Main Roll': '1d20', 'Second Roll': None, 'Table info (do * # DOES)':{}} # base
+    msg = ' '.join(args).split('|')[1:] # splitter
     print(msg)
 
     for a in msg:
         #print(a)
-        splt = a.index(': ')
+        splt = a.index(': ') # get the split
         #print(a[:splt], a[splt+2:])
-        if a[:splt] == 'Table info (do * # DOES)':
+        if a[:splt] == 'Table info (do * # DOES)': # ignore this part of the table
             #print('hi)')
-            tablestuff = a[splt+2:].split('* ')
+            tablestuff = a[splt+2:].split('* ') # get the part we want
             #print(tablestuff)
-            for data in tablestuff:
+            for data in tablestuff: # for table stuff mostly cleanup
                 if data != '':
                     splt = data.index(' ')
                     custRoll['Table info (do * # DOES)'][str(data[:splt])] = str(data[splt+1:])
 
-        elif (a[splt+2:-1] != '__') and (a[splt+2:-1] != '___'):
-            custRoll[a[:splt]] = a[splt+2:-1]
+        elif (a[splt+2:-1] != '__') and (a[splt+2:-1] != '___'): # more stuff related to cleanup for main/sub rolls
+            custRoll[a[:splt]] = a[splt+2:-1].lower()
         
     print(custRoll)
     return(custRoll)
@@ -243,6 +290,9 @@ def CustomRollMaker(ctx,*args):
 
 # for testing
 if __name__ == "__main__":
+    '''
+    Tests
+    '''
     print(diceBase(*()))
     print('\n'*2)
     print(diceBase(*('+1 ')))
@@ -256,6 +306,10 @@ if __name__ == "__main__":
     print(diceBase(*('adv ','+1 ')))
     print('\n'*2)
     print(diceBase(*('adv ','4d6 ', '+1 ','-1d4')))
+
+
+    roll = {'total': 31, '6d6': [6, 2, 1, 6, 3, 5], '+4d4': [2, 1, 1, 4], '+3': [3], 'speak': ' 6d6 [4, 6, 1, 6, 3, 5] +4d4 [4, 1, 1, 3] +3'}
+    #diceCleanup(roll)
 
 
 '''

@@ -20,7 +20,7 @@
     <str name="Speed" val="30ft "/>
     <str name="Main Class" val="Sorcerer "/>
     <str name="WIS" val="13 "/>
-    <str name="Skills Prof" val="Deception, History, Insight, Perception, Persuasion ,"/>
+    <str name="Skills Prof" val="Deception, History, Insight, Perception, Persuasion, Stealth ,"/>
     <dict name="Skills">
         <int name="dexterity" val="3"/>
         <int name="wisdom" val="1"/>
@@ -44,8 +44,10 @@
         <int name="persuasion" val="7"/>
         <int name="religion" val="2"/>
         <int name="sleightofhand" val="3"/>
-        <int name="stealth" val="3"/>
+        <int name="stealth" val="6"/>
         <int name="survival" val="1"/>
     </dict>
+    <str name="Skills Expertise" val="__ ,"/>
+    <str name="Expertise" val="__ "/>
     <int name="Initiative" val="3"/>
 </dict>

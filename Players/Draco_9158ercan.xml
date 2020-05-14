@@ -5,7 +5,7 @@
     <int name="Proficiency" val="3"/>
     <int name="Spell Attack" val="7"/>
     <str name="Name" val="Ercan "/>
-    <str name="URL" val="https://ddb.ac/characters/21930728/e3L3rg"/>
+    <str name="URL" val="https://ddb.ac/characters/21930728/VxfrTM"/>
     <str name="AC" val="15 "/>
     <str name="Alignment" val="Unaligned"/>
     <str name="CHA" val="8 "/>
@@ -47,7 +47,10 @@
         <int name="stealth" val="2"/>
         <int name="survival" val="0"/>
     </dict>
+    <str name="Skills Expertise" val=","/>
+    <str name="Expertise" val=""/>
     <int name="Initiative" val="2"/>
-    <str name="Card Hand" val=""/>
-    <int name="Gold" val="67"/>
+    <int name="Gold" val="90"/>
+    <int name="Silver" val="6"/>
+    <int name="Copper" val="3"/>
 </dict>

@@ -54,7 +54,8 @@ cur_user = 0 # the curent user that is talking to turtle
 pause = False
 
 using = Load('ActiveUsing')
-
+if using == None:
+    using = {}
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 ###################### Custom Admin Commands ###################
@@ -399,73 +400,13 @@ async def discard(ctx, *cards):
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 ###################### Player Commands ###################
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-# How do you dodge a FIREBALL!
-@bot.command()
-async def save(ctx, tpe):
-    '''
-    Roll a save (STR, DEX, CON, INT, WIS, CHA)
-    '''
-    try:    
-        lst = {'fighter':['STR','CON'], 'druid': ['WIS','INT'], 'artificer':['INT','CON'], 'barbarian':['STR','CON'], 'bard':['DEX','CHA'], 'cleric':['WIS','CHA'], 'monk':['STR','DEX'], 'paladin':['WIS','CHA'], 'ranger':['STR','DEX'], 'rouge':['DEX','INT'], 'sorcerer':['CON','CHA'], 'warlock':['WIS','CHA'], 'wizard':['INT','WIS']}
-        
-        mod = get_modifyer(using[str(ctx.author)],tpe.upper())
-        dice = randomnum(1,20)
-
-        if tpe.upper() in lst[using[str(ctx.author)]['Main Class'].lower().replace(' ','')]:
-            mod += int(using[str(ctx.author)]['Proficiency'])
-
-        speak = '**Rolled:** 1d20 [{}] +{}'.format(dice,mod)
-
-        embed=discord.Embed(title="Saves!", color=0xe33604)
-        embed.add_field(name=speak.replace('[1]','[**1**]').replace('[20]','[**20**]'), value='**Total**: '+ str(dice + mod), inline=False)
-        
-        await ctx.send(embed = embed)
-
-    except KeyError as e:
-        await sendmsg(ctx,"You havent taken on a character yet!")
-        await sendmsg(ctx,"Do []player CHARACTER_NAME!")
-        await sendmsg(ctx,"OR if you havent made a character yet do []character!")
-        print('Error: ', e)
-    except Exception as e:
-        await sendmsg(ctx,"Op something went wrong.")
-        print('Error: ', e)
-    
-
-# Check. Your turn
-@bot.command()
-async def check(ctx, *stuff):
-    '''
-    Make a ___ check
-    '''
-    await r(ctx, *stuff)
-
-
-# IM FAST AS #*$& BOIIII
-@bot.command()
-async def init(ctx, *args):
-    '''
-    Initiative
-    '''
-    try:    
-        thing = '+' + str(using[str(ctx.author)]['Initiative'])
-        print(thing)
-        await roll(ctx,(thing))
-        #await sendmsg(ctx,"{} now has {}/{} HP".format(using[str(ctx.author)]['Name'],using[str(ctx.author)]['Current HP'],using[str(ctx.author)]['HP']))
-    
-    except KeyError:
-        await sendmsg(ctx,"You havent taken on a character yet!")
-        await sendmsg(ctx,"Do []player CHARACTER_NAME!")
-        await sendmsg(ctx,"OR if you havent made a character yet do []character!")
-    except Exception as e:
-        await sendmsg(ctx,"Op something went wrong.")
-        print('Error: ', e)
-
 
 # CASH MONY BABY! 
 @bot.command()
 async def gold(ctx, val = 0.0):
     """
     Change your gold count!
+    []gold # 
     """
     global using
 
@@ -530,12 +471,22 @@ async def gold(ctx, val = 0.0):
         print(e)
         await sendmsg(ctx, "GOLD ERROR: {}".format(e))    
 
+
+# Less impressive cash
 @bot.command()
 async def silver(ctx, val = 0.0):
+    """
+    Change your silver count!
+    []silver # 
+    """
     await gold(ctx,float(val/10))
-
+# even less impresive cash
 @bot.command()
 async def copper(ctx, val = 0.0):
+    """
+    Change your copper count!
+    []copper # 
+    """
     await gold(ctx,float(val/100))
 
 
@@ -560,8 +511,7 @@ async def heal(ctx, damage):
         await sendmsg(ctx,"Op something went wrong.")
         print('Error: ', e)
 
-
-# demonic sounds
+# Demonic sounds
 @bot.command()
 async def hurt(ctx, damage):
     '''
@@ -586,21 +536,21 @@ async def hurt(ctx, damage):
 # Newby huh?
 @bot.command()
 async def character(ctx, *args):
-    info = {'Spell Save': 10, 'Proficiency': 1,'Spell Attack': 1,'Name': 'NAMELESS', 'URL': None, 'AC': 10, 'Alignment': 'Unaligned', 'CHA': 10, 'CON': 10, 'Challenge Rating': 0, 'DEX': 10, 'HP': 10, 'INT': 10, 'Passive Perception': 10, 'STR': 10, 'Total Level': 1, 'Skills': 'Perception +3, Stealth +4', 'Speed': '30ft', 'Main Class': 'Fighter', 'WIS': 10}
+    info = {'Spell Save': 10, 'Proficiency': 1,'Spell Attack': 1,'Name': 'NAMELESS', 'URL': None, 'AC': 10, 'Alignment': 'Unaligned', 'CHA': 10, 'CON': 10, 'Challenge Rating': 0, 'DEX': 10, 'HP': 10, 'INT': 10, 'Passive Perception': 10, 'STR': 10, 'Total Level': 1, 'Skills': 'Perception, Stealth', 'Speed': '30ft', 'Main Class': 'Fighter', 'WIS': 10,'Expertise': '__'}
     print('start')
     magic = {"monk":'wis',"rogue":'INT',"fighter":'INT',"warlock":'CHA','wizard': 'INT', 'druid': 'WIS', 'sorcerer': 'CHA', 'bard': 'CHA', 'paladin': 'CHA', 'ranger': 'WIS', 'artificer': 'INT', 'cleric': 'WIS'}
     try:
         if len(args) == 0: # basic help
-            stuff = """```\n[]character |Name: __\n|Main Class: __\n|Total Level: __\n|AC: __\n|HP: __\n|Speed: __ft\n|STR: __\n|DEX: __\n|CON: __\n|INT: __\n|WIS: __\n|CHA: __\n|Skills: __\n|URL: __```"""
+            stuff = """```\n[]character |Name: __\n|Main Class: __\n|Total Level: __\n|AC: __\n|HP: __\n|Speed: __ft\n|STR: __\n|DEX: __\n|CON: __\n|INT: __\n|WIS: __\n|CHA: __\n|Skills: __\n|Expertise: __\n|URL: __```"""
             await sendmsg(ctx,stuff)
             await sendmsg(ctx,"Copy the above then replace __ and send back") # with []player
-            await sendmsg(ctx,"If you dont have anything for that slot leave it blank (EXCEPT NAME!!)")
+            await sendmsg(ctx,"**If you dont have anything for that slot leave it blank __(EXCEPT NAME!!)__**")
             #await sendmsg(ctx,"Leaving __ will result with its default")
 
         elif len(args) == 1:
             info = Load(('Players\\'+str(ctx.author).replace('#','_').replace(' ','') + args[0].lower().replace(' ','')))
 
-            spl=discord.Embed(title=info['Name'], url=info['URL'], description="{}{}: {}".format(info['Main Class'],info['Total Level'],info['Alignment']), color=0x2778c0)
+            spl=discord.Embed(title=info['Name'], url=info['URL'], description="{}{}: {}".format(info['Main Class'],info['Total Level'],info['Alignment']), color=0x25ae11)
             #embed.set_thumbnail(url="https://cdn.discordapp.com/embed/avatars/0.png")
             spl.add_field(name="AC", value=info['AC'], inline=True)
             spl.add_field(name="HP", value=str(info['Current HP'])+'/'+info['HP'], inline=True)
@@ -620,14 +570,19 @@ async def character(ctx, *args):
             await ctx.send(embed = spl)
             
         else:
-            info = make_charicter(ctx, *args)
-            print(info)
+            #print(info)
             try:
                 print("Old Save")
+                info = Load(('Players\\'+str(ctx.author).replace('#','_').replace(' ','') + args[0].lower().replace(' ','')))
+                data = make_charicter(ctx, *args)
+                for stuff in data:
+                    if stuff != 'hand':
+                        info[stuff] = data[stuff] 
                 #save char
                 Save(('Players\\'+str(ctx.author).replace('#','_').replace(' ','') + info['Name'].lower().replace(' ','')), info)
             except Exception as e:
                 print(e)
+                info = make_charicter(ctx, *args)
                 #save char
                 print("New Save")
                 Save(('Players\\'+str(ctx.author).replace('#','_').replace(' ','') + info['Name'].lower().replace(' ','')), info)
@@ -647,9 +602,14 @@ async def player(ctx, *args):
     global using
     if len(args) != 0:
         if args[0] == 'update':
-            stuff = """```\n[]character |Name: {}\n|Main Class: {}\n|Total Level: {}\n|AC: {}\n|HP: {}\n|Speed: {}\n|STR: {}\n|DEX: {}\n|CON: {}\n|INT: {}\n|WIS: {}\n|CHA: {}\n|Skills: {}\n|URL: {}```""".format(using[str(ctx.author)]['Name'][:-1],using[str(ctx.author)]['Main Class'][:-1],using[str(ctx.author)]['Total Level'][:-1],using[str(ctx.author)]['AC'][:-1],using[str(ctx.author)]['HP'][:-1],using[str(ctx.author)]['Speed'][:-1],using[str(ctx.author)]['STR'][:-1],using[str(ctx.author)]['DEX'][:-1],using[str(ctx.author)]['CON'][:-1],using[str(ctx.author)]['INT'][:-1],using[str(ctx.author)]['WIS'][:-1],using[str(ctx.author)]['CHA'][:-1],using[str(ctx.author)]['Skills Prof'][:-2],using[str(ctx.author)]['URL'])
-            await sendmsg(ctx,stuff)
-            await sendmsg(ctx,"Copy the above update it and send back") # with []player
+            try:
+                stuff = """```\n[]character |Name: {}\n|Main Class: {}\n|Total Level: {}\n|AC: {}\n|HP: {}\n|Speed: {}\n|STR: {}\n|DEX: {}\n|CON: {}\n|INT: {}\n|WIS: {}\n|CHA: {}\n|Skills: {}\n|Expertise: {}\n|URL: {}```""".format(using[str(ctx.author)]['Name'][:-1],using[str(ctx.author)]['Main Class'][:-1],using[str(ctx.author)]['Total Level'][:-1],using[str(ctx.author)]['AC'][:-1],using[str(ctx.author)]['HP'][:-1],using[str(ctx.author)]['Speed'][:-1],using[str(ctx.author)]['STR'][:-1],using[str(ctx.author)]['DEX'][:-1],using[str(ctx.author)]['CON'][:-1],using[str(ctx.author)]['INT'][:-1],using[str(ctx.author)]['WIS'][:-1],using[str(ctx.author)]['CHA'][:-1],using[str(ctx.author)]['Skills Prof'][:-2],using[str(ctx.author)]['Skills Expertise'][:-2],using[str(ctx.author)]['URL'])
+                await sendmsg(ctx,stuff)
+                await sendmsg(ctx,"Copy the above update it and send back") # with []player
+            except:
+                stuff = """```\n[]character |Name: {}\n|Main Class: {}\n|Total Level: {}\n|AC: {}\n|HP: {}\n|Speed: {}\n|STR: {}\n|DEX: {}\n|CON: {}\n|INT: {}\n|WIS: {}\n|CHA: {}\n|Skills: {}\n|Expertise: {}\n|URL: {}```""".format(using[str(ctx.author)]['Name'][:-1],using[str(ctx.author)]['Main Class'][:-1],using[str(ctx.author)]['Total Level'][:-1],using[str(ctx.author)]['AC'][:-1],using[str(ctx.author)]['HP'][:-1],using[str(ctx.author)]['Speed'][:-1],using[str(ctx.author)]['STR'][:-1],using[str(ctx.author)]['DEX'][:-1],using[str(ctx.author)]['CON'][:-1],using[str(ctx.author)]['INT'][:-1],using[str(ctx.author)]['WIS'][:-1],using[str(ctx.author)]['CHA'][:-1],using[str(ctx.author)]['Skills Prof'][:-2],"__",using[str(ctx.author)]['URL'])
+                await sendmsg(ctx,stuff)
+                await sendmsg(ctx,"Copy the above update it and send back") # with []player
         else:
             try:
                 try:
@@ -657,6 +617,11 @@ async def player(ctx, *args):
                         Save(('Players\\'+str(ctx.author).replace('#','_').replace(' ','') + using[str(ctx.author)]['Name'].lower().replace(' ','')), using[str(ctx.author)])
                 except:
                     pass
+                
+                # Failsafe
+                if type(using[str(ctx.author)]) != dict:
+                    using[str(ctx.author)] = {}
+
                 using[str(ctx.author)] = Load('Players\\'+str(ctx.author).replace('#','_').replace(' ','') + ''.join(args).lower().replace(' ',''))
                 await sendmsg(ctx,"Linked!")
                 Save('ActiveUsing',using)
@@ -674,19 +639,103 @@ async def player(ctx, *args):
             await sendmsg(ctx,"OR if you havent made a character yet do []character!")
         except Exception as e:
             await sendmsg(ctx,"Op something went wrong.")
-            print('Error: ', e)
+            print(type(e), e)
             
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 ###################### Dice Commands ###################
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+# How do you dodge a FIREBALL!
+@bot.command()
+async def save(ctx, tpe):
+    '''
+    Roll a save (STR, DEX, CON, INT, WIS, CHA)
+    '''
+    try:    
+        lst = {'fighter':['STR','CON'], 'druid': ['WIS','INT'], 'artificer':['INT','CON'], 'barbarian':['STR','CON'], 'bard':['DEX','CHA'], 'cleric':['WIS','CHA'], 'monk':['STR','DEX'], 'paladin':['WIS','CHA'], 'ranger':['STR','DEX'], 'rouge':['DEX','INT'], 'sorcerer':['CON','CHA'], 'warlock':['WIS','CHA'], 'wizard':['INT','WIS']}
+        
+        mod = get_modifyer(using[str(ctx.author)],tpe.upper())
+        dice = randomnum(1,20)
+
+        if tpe.upper() in lst[using[str(ctx.author)]['Main Class'].lower().replace(' ','')]:
+            mod += int(using[str(ctx.author)]['Proficiency'])
+
+        speak = '**Rolled:** 1d20 [{}] +{}'.format(dice,mod)
+
+        embed=discord.Embed(title="Saves!", color=0xe33604)
+        embed.add_field(name=speak.replace('[1]','[**1**]').replace('[20]','[**20**]'), value='**Total**: '+ str(dice + mod), inline=False)
+        
+        await ctx.send(embed = embed)
+
+    except KeyError as e:
+        await sendmsg(ctx,"You havent taken on a character yet!")
+        await sendmsg(ctx,"Do []player CHARACTER_NAME!")
+        await sendmsg(ctx,"OR if you havent made a character yet do []character!")
+        print('Error: ', e)
+    except Exception as e:
+        await sendmsg(ctx,"Op something went wrong.")
+        print('Error: ', e)
+    
+
+# Check. Your turn
+@bot.command()
+async def check(ctx, *stuff):
+    '''
+    Make a ___ check
+    '''
+    await r(ctx, *stuff)
+
+
+# IM FAST AS #*$& BOIIII
+@bot.command()
+async def init(ctx, *args):
+    '''
+    Initiative
+    '''
+    try:    
+        thing = '+' + str(using[str(ctx.author)]['Initiative'])
+        print(thing)
+        stuff = diceBase(thing)
+        stuff['speak'] = quick_combiner(stuff)
+        #await roll(ctx,(thing))
+
+
+        embed=discord.Embed(title="{} Init!".format(using[str(ctx.author)]['Name']), color=0xe33604)
+        embed.add_field(name=stuff['speak'].replace('[1]','[**1**]').replace('[20]','[**20**]'), value='**Total**: `'+ str(stuff['total']) + '`', inline=False)
+
+        await sendmsg(ctx, embed= embed) # send msg
+
+        #print(stuff["Total"])
+        try:
+            using[ctx.guild.name]['init'] += [ctx.author,stuff["total"]]
+        except:
+            using[ctx.guild.name] = {'init': [[ctx.author,stuff["total"]]]}
+        #await sendmsg(ctx,"{} now has {}/{} HP".format(using[str(ctx.author)]['Name'],using[str(ctx.author)]['Current HP'],using[str(ctx.author)]['HP']))
+    
+    except KeyError as e:
+        print(e)
+        await sendmsg(ctx,"You havent taken on a character yet!")
+        await sendmsg(ctx,"Do []player CHARACTER_NAME!")
+        await sendmsg(ctx,"OR if you havent made a character yet do []character!")
+    except Exception as e:
+        await sendmsg(ctx,"Op something went wrong.")
+        print(type(e), e)
+
+
+
 
 @bot.command()
 async def customroll(ctx, *args):
+    '''
+    Create custom rolls and tables
+    '''
     await cr(ctx,*args)
 
 
 @bot.command()
 async def cr(ctx, *args):
+    '''
+    Create custom rolls and tables
+    '''
     global using
     if len(args) != 0:
         if args[0] == 'update':
@@ -697,22 +746,25 @@ async def cr(ctx, *args):
         else:
             try:
                 custRoll = CustomRollMaker(ctx,*args)
-                if 'global' not in custRoll['Name'].lower():
+                try:
+                    #savename = using[str(ctx.author)]['Name'] + custRoll['Name'][:-1]
+                    #savename = custRoll['Name']
+                    
                     try:
-                        savename = using[str(ctx.author)]['Name'] + custRoll['Name'][:-1]
+                        using[str(ctx.author)]['Rolls'][custRoll['Name']] = custRoll
                     except:
-                        #savename = str(ctx.author) + custRoll['Name'][:-1]
-                        await sendmsg(ctx,"You havent taken on a character yet!")
-                        await sendmsg(ctx,"Do []player CHARACTER_NAME!")
-                        await sendmsg(ctx,"OR if you havent made a character yet do []character!")
-                else:
-                    savename = custRoll['Name'][:-1].replace('global','')
+                        using[str(ctx.author)]['Rolls'] = {custRoll['Name']: custRoll}
 
-                using['Rolls'][savename] = custRoll
-                Save('ActiveUsing',using)
+                    Save(('Players\\'+str(ctx.author).replace('#','_').replace(' ','') + using[str(ctx.author)]['Name'].lower().replace(' ','')), using[str(ctx.author)])
+                    Save('ActiveUsing',using)
+                except:
+                    await sendmsg(ctx,"You havent taken on a character yet!")
+                    await sendmsg(ctx,"Do []player CHARACTER_NAME!")
+                    await sendmsg(ctx,"OR if you havent made a character yet do []character!")
+                
 
             except Exception as e:
-                await sendmsg(ctx,"Linking Error: {}".format(e))
+                await sendmsg(ctx,"Custom roll Error: {}, {}".format(type(e),e))
                 print(e)
                 
     else:
@@ -722,6 +774,7 @@ async def cr(ctx, *args):
             await sendmsg(ctx,stuff)
             await sendmsg(ctx,"Copy the above then replace __ and send back") # with []player
             await sendmsg(ctx,"If you dont have anything for that slot leave it blank (EXCEPT NAME!!)")
+            await sendmsg(ctx,"For the table put it inside a code block **```**.")
             await sendmsg(ctx,"Table rolls are done off the Second Roll")
             await sendmsg(ctx,"For rolls inside the table put it inside two **`**.")
 
@@ -729,21 +782,22 @@ async def cr(ctx, *args):
             await sendmsg(ctx,"Op something went wrong.")
             print('Error: ', e)
 
+    await sendmsg(ctx,"Roll {} Made".format(custRoll['Name']))
 
 
-# for rolling
+
+# R's older brother
 @bot.command()
 async def roll(ctx, *args):
     await r(ctx, *args)
 
 
-# dice
+# Snake eyes!
 @bot.command()
 async def r(ctx, *args):
     """This rolls a # of dice and gives the output. Usage: []r 1d4 +4"""
     global using
     await ctx.message.add_reaction("🎲")
-    
 
     try:
         things = await bitReplacer(ctx, using, *args)
@@ -751,7 +805,7 @@ async def r(ctx, *args):
             await sendmsg(ctx,"Improper skill name!")
 
     except KeyError:
-        await sendmsg(ctx,"Improper skill name! {}".format(args[a]))
+        await sendmsg(ctx,"Improper skill name! {}".format(args))
     except Exception as e:
         print(e)
 
@@ -796,6 +850,8 @@ async def r(ctx, *args):
                     stuff['speak'] += ' ' + str(stuff[a])
         #'''
 
+    #stuff['speak'] = diceCleanup(stuff)
+    print(stuff['speak'])
     try:
         embed=discord.Embed(title="{} Rolls".format(using[str(ctx.author)]['Name']), color=0xe33604)
     except:
@@ -873,10 +929,10 @@ async def cast(ctx, *spell):
         #await sendmsg(ctx,"Refactoring spell list")
 
         #reloadSpellList()
-        data = SpellBook(spell)
+        data = SpellBook(spell) # get spell
         if (data != None) and (data != 'None'):
             try:
-                data['fight'] = offenceSpell(data)
+                data['fight'] = offenceSpell(data) # upcast
             except Exception as e:
                 print('Error Get fight: {}'.format(data))
                 await sendmsg(ctx,'Error Get fight: {}'.format(data))
@@ -972,6 +1028,9 @@ async def spell(ctx, *spell):
 
     spell = ' '.join(spell).lower()
 
+    if spell == '':
+        await sendmsg(ctx, "Here is my Source Spellbook: https://www.dnd-spells.com/spell")
+
     async with ctx.channel.typing():
         await ctx.message.add_reaction("📖")
         #await sendmsg(ctx,"Refactoring spell list")
@@ -1063,6 +1122,35 @@ async def monster(ctx, *name):
 ###################### Custom Commands ###################
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
+@bot.command()
+async def chaos(ctx):
+    """
+    Good luck.
+    """
+    await sendmsg(ctx,'THIS ISENT NOT DONE YET!')
+
+    # 1 SMITE!
+    # 2 Screem
+    # 3 server dephin '60 seconds'
+    # 4 server mute '60 seconds'
+    # 5 Put into the Corner '
+    # 6 Gives Stinky roll
+    # 7 You HAD admin 'troll' 'after 4 seconds'
+    # 8 THIS ISENT DONE YET! 'line'
+    # 9 ROCKS FALL! LIGHTNING STRIKES! YOUR DEAD GET FUCKED! 'direct message'
+    # 10 Eah could have been better or worse 'line'
+    # 11 Eah could have been better or worse 'line'
+    # 12 Huh... neat 'line'
+    # 13 Countdown started 'line'
+    # 14 So I know what your doing your going mad 'line'
+    # 15 Er. No, sorry. 'line'
+    # 16 Buy yourself something nice 'line'
+    # 17 Here have a sandwitch
+    # 18 gives golden roll
+    # 19 So CLose. Heres a cookie 'cookie'
+    # 20 You have ADMIN! 'for one second'
+    
+
 
 @bot.command()
 async def dragon(ctx):
@@ -1107,12 +1195,12 @@ async def conversate(message):
 
     elif "i need an army" in message.content.lower():
         await sendmsgorig(message, "On it boss!")
-        msg = "🐢"
+        msg = "🐉"
         rand = randomnum(100,200)
         for a in range(rand):
-            msg = msg + "🐢"
+            msg = msg + "🐉"
         await sendmsgorig(message, msg)
-        msg = "I was able to get " + str(rand) + " Turtles for the cause!"
+        msg = "I was able to get " + str(rand) + " Dragons for the cause!"
         await sendmsgorig(message, msg)
 
     elif "yell at " in message.content.lower():
@@ -1310,6 +1398,9 @@ async def on_message(message):
         else:
             await sendmsgorig(message, "Your welcome!")
 
+    elif "smite" in message.content.lower(): 
+        await sendmsgorig(message, "⚡**SMITE!**⚡")
+
     elif "please" in message.content.lower(): 
         if message.author.id == bertle:
             await sendmsgorig(message, "PRETTY PLEASE!")
@@ -1317,6 +1408,8 @@ async def on_message(message):
     elif "hi turtle" in message.content.lower(): 
         await sendmsgorig(message, "Hello!")
 
+    elif "fuck you" in message.content.lower(): 
+        await sendmsgorig(message, "Well ok then.")
 
     elif message.content.startswith("[] "): 
         if message.author.id == bertle:

@@ -1,0 +1,53 @@
+<?xml version="1.0" ?>
+<dict>
+    <int name="Current HP" val="45"/>
+    <int name="Spell Save" val="14"/>
+    <int name="Proficiency" val="3"/>
+    <int name="Spell Attack" val="6"/>
+    <str name="Name" val="Kulu "/>
+    <str name="URL" val="https://www.dungeonmastersvault.com/pages/dnd/5e/characters/17592199352349"/>
+    <str name="AC" val="18 "/>
+    <str name="Alignment" val="Unaligned"/>
+    <str name="CHA" val="14 "/>
+    <str name="CON" val="13 "/>
+    <int name="Challenge Rating" val="0"/>
+    <str name="DEX" val="20 "/>
+    <str name="HP" val="45 "/>
+    <str name="INT" val="12 "/>
+    <int name="Passive Perception" val="10"/>
+    <str name="STR" val="8 "/>
+    <str name="Total Level" val="7 "/>
+    <str name="Speed" val="40ft; 50ft (Fly) "/>
+    <str name="Main Class" val="Monk "/>
+    <str name="WIS" val="17 "/>
+    <str name="Skills Prof" val="Acrobatics, Insight, Religion, Stealth ,"/>
+    <dict name="Skills">
+        <int name="dexterity" val="5"/>
+        <int name="wisdom" val="3"/>
+        <int name="intelligence" val="1"/>
+        <int name="strength" val="-1"/>
+        <int name="constitution" val="1"/>
+        <int name="charisma" val="2"/>
+        <int name="acrobatics" val="8"/>
+        <int name="animalhandling" val="3"/>
+        <int name="arcana" val="1"/>
+        <int name="athletics" val="-1"/>
+        <int name="deception" val="2"/>
+        <int name="history" val="1"/>
+        <int name="insight" val="6"/>
+        <int name="intimidation" val="2"/>
+        <int name="investigation" val="1"/>
+        <int name="medicine" val="3"/>
+        <int name="nature" val="1"/>
+        <int name="perception" val="3"/>
+        <int name="performance" val="2"/>
+        <int name="persuasion" val="2"/>
+        <int name="religion" val="4"/>
+        <int name="sleightofhand" val="5"/>
+        <int name="stealth" val="8"/>
+        <int name="survival" val="3"/>
+    </dict>
+    <str name="Skills Expertise" val="__ ,"/>
+    <str name="Expertise" val="__ "/>
+    <int name="Initiative" val="5"/>
+</dict>
