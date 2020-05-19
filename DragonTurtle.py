@@ -54,7 +54,7 @@ cur_user = 0 # the curent user that is talking to turtle
 pause = False
 
 using = Load('ActiveUsing')
-if using == None:
+if type(using) != dict:
     using = {}
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -451,8 +451,9 @@ async def gold(ctx, val = 0.0):
 
             cash.set_footer(text="Gold Change: {} + {}".format(int(using[str(ctx.author)]['Gold'])-gold,gold))
 
-            
-            Save(('Players\\'+str(ctx.author).replace('#','_').replace(' ','') + using[str(ctx.author)]['Name'].lower().replace(' ','')), using[str(ctx.author)])
+            save_charicter(ctx,using)
+            #using[str(ctx.author)]['Card Hand'] = [] # failsafe
+            #Save(('Players\\'+str(ctx.author).replace('#','_').replace(' ','') + using[str(ctx.author)]['Name'].lower().replace(' ','')), using[str(ctx.author)])
             Save('ActiveUsing',using)
             
         else:
@@ -614,16 +615,22 @@ async def player(ctx, *args):
             try:
                 try:
                     if ''.join(args).lower().replace(' ','') != using[str(ctx.author)]['Name'].lower().replace(' ',''):
-                        Save(('Players\\'+str(ctx.author).replace('#','_').replace(' ','') + using[str(ctx.author)]['Name'].lower().replace(' ','')), using[str(ctx.author)])
+                        save_charicter(ctx,using)
+                        #using[str(ctx.author)]['Card Hand'] = [] # failsafe
+                        #Save(('Players\\'+str(ctx.author).replace('#','_').replace(' ','') + using[str(ctx.author)]['Name'].lower().replace(' ','')), using[str(ctx.author)])
                 except:
                     pass
                 
                 # Failsafe
-                if type(using[str(ctx.author)]) != dict:
-                    using[str(ctx.author)] = {}
+                try:
+                    if type(using[str(ctx.author)]) != dict:
+                        using[str(ctx.author)] = {}
+                except:
+                    pass
 
                 using[str(ctx.author)] = Load('Players\\'+str(ctx.author).replace('#','_').replace(' ','') + ''.join(args).lower().replace(' ',''))
                 await sendmsg(ctx,"Linked!")
+
                 Save('ActiveUsing',using)
             except Exception as e:
                 await sendmsg(ctx,"Linking Error: {}".format(e))
@@ -740,10 +747,13 @@ async def cr(ctx, *args):
     if len(args) != 0:
         if args[0] == 'update':
             # If global____ is name then it will remove the global and give all users acsess to it 
-            stuff = """```\n[]customroll |Name: {}\n|Main Roll: {}\n|Second Roll: {}\n|Table info:\n```""".format(using[str(ctx.author)]['Name'][:-1])
+            stuff = """```\n[]customroll |Name: {}\n|Main Roll: {}\n|Second Roll: {}\n|Table info:\n```""".format(using[str(ctx.author)]['Name'][:-1], using[str(ctx.author)]['Main'][:-1], using[str(ctx.author)]['Second'][:-1], using[str(ctx.author)]['Table'][:-1])
             await sendmsg(ctx,stuff)
             await sendmsg(ctx,"Copy the above update it and send back") # with []player
         else:
+            for a in using[str(ctx.author)]['Rolls']:
+                print(a) 
+            
             try:
                 custRoll = CustomRollMaker(ctx,*args)
                 try:
@@ -755,7 +765,8 @@ async def cr(ctx, *args):
                     except:
                         using[str(ctx.author)]['Rolls'] = {custRoll['Name']: custRoll}
 
-                    Save(('Players\\'+str(ctx.author).replace('#','_').replace(' ','') + using[str(ctx.author)]['Name'].lower().replace(' ','')), using[str(ctx.author)])
+                    save_charicter(ctx,using)
+                    #Save(('Players\\'+str(ctx.author).replace('#','_').replace(' ','') + using[str(ctx.author)]['Name'].lower().replace(' ','')), using[str(ctx.author)])
                     Save('ActiveUsing',using)
                 except:
                     await sendmsg(ctx,"You havent taken on a character yet!")

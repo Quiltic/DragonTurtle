@@ -18,6 +18,11 @@ except:
     from JTools import Save
 
 
+def save_charicter(ctx,using):
+    using[str(ctx.author)]['Card Hand'] = [] # failsafe
+    Save(('Players\\'+str(ctx.author).replace('#','_').replace(' ','') + using[str(ctx.author)]['Name'].lower().replace(' ','')), using[str(ctx.author)])
+    
+
 
 def make_charicter(ctx, *args):
     try:

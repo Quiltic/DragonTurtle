@@ -1,6 +1,6 @@
 <?xml version="1.0" ?>
 <dict>
-    <int name="Current HP" val="6"/>
+    <int name="Current HP" val="41"/>
     <int name="Spell Save" val="15"/>
     <int name="Proficiency" val="3"/>
     <int name="Spell Attack" val="7"/>
@@ -48,8 +48,9 @@
         <int name="survival" val="1"/>
     </dict>
     <int name="Initiative" val="-2"/>
-    <int name="Gold" val="227"/>
+    <int name="Gold" val="427"/>
     <int name="Silver" val="8"/>
     <int name="Copper" val="6"/>
-    <str name="Card Hand" val=""/>
+    <list name="Card Hand"/>
+    <list name="Hand"/>
 </dict>

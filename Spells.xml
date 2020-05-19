@@ -1400,4 +1400,103 @@
         </list>
         <str name="url" val="https://www.dnd-spells.com/spell/watery-sphere"/>
     </dict>
+    <dict name="lesser-restoration">
+        <str name="name" val="Lesser Restoration"/>
+        <str name="school" val="Abjuration"/>
+        <dict name="cast">
+            <str name="level" val=" 2"/>
+            <str name="casting time" val="1 Action"/>
+            <str name="range" val="Touch"/>
+            <str name="components" val="V, S"/>
+            <str name="duration" val="Instantaneous"/>
+        </dict>
+        <str name="does" val="|n You touch a creature and can end either one disease or one condition afflicting it. The condition can be blinded, deafened, paralyzed, or poisoned. |n"/>
+        <str name="page" val="Page: 255  Players Handbook     "/>
+        <list name="classes">
+            <str val="Bard"/>
+            <str val="Cleric"/>
+            <str val="Druid"/>
+            <str val="Paladin"/>
+            <str val="Ranger"/>
+        </list>
+        <str name="url" val="https://www.dnd-spells.com/spell/lesser-restoration"/>
+    </dict>
+    <dict name="alter-self">
+        <str name="name" val="Alter Self"/>
+        <str name="school" val="Transmutation"/>
+        <dict name="cast">
+            <str name="level" val=" 2"/>
+            <str name="casting time" val="1 Action"/>
+            <str name="range" val="Self"/>
+            <str name="components" val="V, S"/>
+            <str name="duration" val="Concentration, up to 1 hour"/>
+        </dict>
+        <str name="does" val="|n You assume a different form. |nWhen you cast the spell, choose one of the following options, the effects of which last for the duration of the spell. While the spell lasts, you can end one option as an action to gain the benefits of a different one.|n |nAquatic Adaptation. You adapt your body to an aquatic environment, sprouting gills, and growing webbing between your fingers. You can breathe underwater and gain a swimming speed equal to your walking speed.|nChange Appearance. You transform your appearance. You decide what you look like, including your height, weight, facial features, sound of your voice, hair length, coloration, and distinguishing characteristics, if any. You can make yourself appear as a member of another race, though none of your statistics change. You also don't appear as a creature of a different size than you, and your basic shape stays the same; if you're bipedal, you can't use this spell to become quadrupedal, for instance. At any time for the duration of the spell, you can use your action to change your appearance in this way again. |nNatural Weapons. You grow claws, fangs, spines, horns, or a different natural weapon of your choice. Your unarmed strikes deal 1d6 bludgeoning, piercing, or slashing damage, as appropriate to the natural weapon you chose, and you are proficient with your unarmed strikes. Finally, the natural weapon is magic and you have a +1 bonus to the attack and damage rolls you make using it. |n"/>
+        <str name="page" val="Page: 211  Players Handbook     "/>
+        <list name="classes">
+            <str val="Sorcerer"/>
+            <str val="Wizard"/>
+        </list>
+        <str name="url" val="https://www.dnd-spells.com/spell/alter-self"/>
+    </dict>
+    <dict name="charm-person">
+        <str name="name" val="Charm Person"/>
+        <str name="school" val="Enchantment"/>
+        <dict name="cast">
+            <str name="level" val=" 1"/>
+            <str name="casting time" val="1 Action"/>
+            <str name="range" val="30 feet"/>
+            <str name="components" val="V, S"/>
+            <str name="duration" val="1 hour"/>
+        </dict>
+        <str name="does" val="|n You attempt to charm a humanoid you can see within range. |nIt must make a Wisdom saving throw, and does so with advantage if you or your companions are fighting it. If it fails the saving throw, it is charmed by you until the spell ends or until you or your companions do anything harmful to it.The charmed creature regards you as a friendly acquaintance. When the spell ends, the creature knows it was charmed by you. |n    When you cast this spell using a spell slot of 2nd level or higher, you can target one additional creature for each slot level above 1st. The creatures must be within 30 feet of each other when you target them.        "/>
+        <str name="page" val="Page: 221  Players Handbook     "/>
+        <list name="classes">
+            <str val="Bard"/>
+            <str val="Druid"/>
+            <str val="Sorcerer"/>
+            <str val="Warlock"/>
+            <str val="Wizard"/>
+        </list>
+        <str name="url" val="https://www.dnd-spells.com/spell/charm-person"/>
+    </dict>
+    <dict name="hypnotic-pattern">
+        <str name="name" val="Hypnotic Pattern"/>
+        <str name="school" val="Illusion"/>
+        <dict name="cast">
+            <str name="level" val=" 3"/>
+            <str name="casting time" val="1 Action"/>
+            <str name="range" val="120 feet"/>
+            <str name="components" val="S, M (a glowing stick of incense or a crystal vial filled with phosphorescent material)"/>
+            <str name="duration" val="Concentration, up to 1 minute"/>
+        </dict>
+        <str name="does" val="|n You create a twisting pattern of colors that weaves through the air inside a 30-foot cube within range.|nThe pattern appears for a moment and vanishes. Each creature in the area who sees the pattern must make a Wisdom saving throw. On a failed save, the creature becomes charmed for the duration. While charmed by this spell, the creature is incapacitated and has a speed of 0.|n|nThe spell ends for an affected creature if it takes any damage or if someone else uses an action to shake the creature out of its stupor. |n"/>
+        <str name="page" val="Page: 252  Players Handbook     "/>
+        <list name="classes">
+            <str val="Bard"/>
+            <str val="Sorcerer"/>
+            <str val="Warlock"/>
+            <str val="Wizard"/>
+        </list>
+        <str name="url" val="https://www.dnd-spells.com/spell/hypnotic-pattern"/>
+    </dict>
+    <str name="dissident-whispers" val="None"/>
+    <dict name="dissonant-whispers">
+        <str name="name" val="Dissonant Whispers"/>
+        <str name="school" val="Enchantment"/>
+        <dict name="cast">
+            <str name="level" val=" 1"/>
+            <str name="casting time" val="1 Action"/>
+            <str name="range" val="60 feet"/>
+            <str name="components" val="V"/>
+            <str name="duration" val="Instantaneous"/>
+        </dict>
+        <str name="does" val="|n You whisper a discordant melody that only one creature of your choice within range can hear, wracking it with terrible pain. |nThe target must make a Wisdom saving throw. On a failed save, it takes 3d6 psychic damage and must immediately use its reaction , if available, to move as far as its speed allows away from you. The creature doesn't move into obviously dangerous ground, such as a fire or a pit. On a successful save, the target takes half as much damage and doesn't have to move away. A deafened creature automatically succeeds on the save. |n    When you cast this spell using a spell slot of 2nd level or higher, the damage increases by 1d6 for each slot level above 1st
+       "/>
+        <str name="page" val="Page: 234  Players Handbook     "/>
+        <list name="classes">
+            <str val="Bard"/>
+        </list>
+        <str name="url" val="https://www.dnd-spells.com/spell/dissonant-whispers"/>
+    </dict>
 </dict>

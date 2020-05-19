@@ -293,8 +293,8 @@ def offenceSpell(spell):
         for a in places:
             p1 = spell['does'][a:].index(' ') # could be takes witch would leave an s
             p2 = spell['does'][a:].index(' damage')
-
-            offencive['damage'] += [spell['does'][a+p1+1:p2+a].split(' ')]
+            if len(spell['does'][a+p1+1:p2+a].split(' ')[0]) <= 5:
+                offencive['damage'] += [spell['does'][a+p1+1:p2+a].split(' ')]
     except ValueError:
         #print('area?')
         pass
