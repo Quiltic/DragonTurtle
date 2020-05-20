@@ -6,6 +6,14 @@ https://leovoel.github.io/embed-visualizer/
 https://en.wikipedia.org/wiki/Miscellaneous_Symbols
 '''
 
+try:
+    #import JTools as jt
+    from JTools import Save
+except:
+    import os
+    os.system("python3 -m pip install git+https://github.com/Quiltic/JTools.git")
+
+
 from Tools.Tools import *
 from Tools.Dice import *
 from Tools.Player import *
@@ -28,7 +36,17 @@ Todo:
 
 """
 
-
+from sys import platform
+if platform == "linux" or platform == "linux2":
+    # linux
+    FilesType = '//'
+elif platform == "darwin":
+    # OS X
+    # OS! OS! WHAT THE HELL!
+    pass
+elif platform == "win32":
+    # Windows
+    FilesType = '\\'
 #from pydub import AudioSegment
 #from guild_info import GuildInfo
 
@@ -53,9 +71,16 @@ bertle = 275002179763306517 #my id  #bot.get_user(bot.owner_id)
 cur_user = 0 # the curent user that is talking to turtle
 pause = False
 
-using = Load('ActiveUsing')
-if type(using) != dict:
-    using = {}
+try:
+    using = Load('ActiveUsing')
+    if type(using) != dict:
+        using = {}
+except:
+    import os
+    os.system("cd /home/pi/DragonTurtle/")
+    using = Load('ActiveUsing')
+    if type(using) != dict:
+        using = {}
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 ###################### Custom Admin Commands ###################
@@ -549,7 +574,7 @@ async def character(ctx, *args):
             #await sendmsg(ctx,"Leaving __ will result with its default")
 
         elif len(args) == 1:
-            info = Load(('Players\\'+str(ctx.author).replace('#','_').replace(' ','') + args[0].lower().replace(' ','')))
+            info = Load(('Players'+FilesType+str(ctx.author).replace('#','_').replace(' ','') + args[0].lower().replace(' ','')))
 
             spl=discord.Embed(title=info['Name'], url=info['URL'], description="{}{}: {}".format(info['Main Class'],info['Total Level'],info['Alignment']), color=0x25ae11)
             #embed.set_thumbnail(url="https://cdn.discordapp.com/embed/avatars/0.png")
@@ -574,19 +599,19 @@ async def character(ctx, *args):
             #print(info)
             try:
                 print("Old Save")
-                info = Load(('Players\\'+str(ctx.author).replace('#','_').replace(' ','') + args[0].lower().replace(' ','')))
+                info = Load(('Players'+FilesType+str(ctx.author).replace('#','_').replace(' ','') + args[0].lower().replace(' ','')))
                 data = make_charicter(ctx, *args)
                 for stuff in data:
                     if stuff != 'hand':
                         info[stuff] = data[stuff] 
                 #save char
-                Save(('Players\\'+str(ctx.author).replace('#','_').replace(' ','') + info['Name'].lower().replace(' ','')), info)
+                Save(('Players'+FilesType+str(ctx.author).replace('#','_').replace(' ','') + info['Name'].lower().replace(' ','')), info)
             except Exception as e:
                 print(e)
                 info = make_charicter(ctx, *args)
                 #save char
                 print("New Save")
-                Save(('Players\\'+str(ctx.author).replace('#','_').replace(' ','') + info['Name'].lower().replace(' ','')), info)
+                Save(('Players'+FilesType+str(ctx.author).replace('#','_').replace(' ','') + info['Name'].lower().replace(' ','')), info)
             await sendmsg(ctx,"Created Charicter Save.")
             await player(ctx,info['Name'])
 
@@ -601,6 +626,7 @@ async def character(ctx, *args):
 @bot.command()
 async def player(ctx, *args):
     global using
+    global FilesType
     if len(args) != 0:
         if args[0] == 'update':
             try:
@@ -628,7 +654,7 @@ async def player(ctx, *args):
                 except:
                     pass
 
-                using[str(ctx.author)] = Load('Players\\'+str(ctx.author).replace('#','_').replace(' ','') + ''.join(args).lower().replace(' ',''))
+                using[str(ctx.author)] = Load('Players'+FilesType+str(ctx.author).replace('#','_').replace(' ','') + ''.join(args).lower().replace(' ',''))
                 await sendmsg(ctx,"Linked!")
 
                 Save('ActiveUsing',using)
@@ -747,7 +773,8 @@ async def cr(ctx, *args):
     if len(args) != 0:
         if args[0] == 'update':
             # If global____ is name then it will remove the global and give all users acsess to it 
-            stuff = """```\n[]customroll |Name: {}\n|Main Roll: {}\n|Second Roll: {}\n|Table info:\n```""".format(using[str(ctx.author)]['Name'][:-1], using[str(ctx.author)]['Main'][:-1], using[str(ctx.author)]['Second'][:-1], using[str(ctx.author)]['Table'][:-1])
+            #stuff = """```\n[]customroll |Name: {}\n|Main Roll: {}\n|Second Roll: {}\n|Table info:\n```""".format(using[str(ctx.author)]['Name'][:-1], using[str(ctx.author)]['Main'][:-1], using[str(ctx.author)]['Second'][:-1], using[str(ctx.author)]['Table'][:-1])
+            stuff = """```\n[]customroll |Name: {}\n|Main Roll: {}\n|Second Roll: {}\n```""".format(using[str(ctx.author)]['Name'][:-1], using[str(ctx.author)]['Main'][:-1], using[str(ctx.author)]['Second'][:-1])
             await sendmsg(ctx,stuff)
             await sendmsg(ctx,"Copy the above update it and send back") # with []player
         else:
