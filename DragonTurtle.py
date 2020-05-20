@@ -39,13 +39,16 @@ Todo:
 from sys import platform
 if platform == "linux" or platform == "linux2":
     # linux
+    print('Using Linux')
     FilesType = '//'
 elif platform == "darwin":
     # OS X
     # OS! OS! WHAT THE HELL!
+    print('OS! OS! WHAT!?')
     pass
 elif platform == "win32":
     # Windows
+    print('Using Windows')
     FilesType = '\\'
 #from pydub import AudioSegment
 #from guild_info import GuildInfo
@@ -78,6 +81,7 @@ try:
 except:
     import os
     os.system("cd /home/pi/DragonTurtle/")
+    print('hi!')
     using = Load('ActiveUsing')
     if type(using) != dict:
         using = {}
