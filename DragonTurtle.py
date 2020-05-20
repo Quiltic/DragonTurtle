@@ -80,7 +80,7 @@ try:
         using = {}
 except:
     import os
-    os.system("cd /home/pi/DragonTurtle/")
+    os.chdir("/home/pi/DragonTurtle/")
     print('hi!')
     using = Load('ActiveUsing')
     if type(using) != dict:
