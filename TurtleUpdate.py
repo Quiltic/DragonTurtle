@@ -9,7 +9,7 @@ print(cwd)
 
 #Clone to location
 os.system(("cd " + cwd))
-os.system("git pull https://github.com/Quiltic/DragonTurtle.git")
+os.system("sudo ggit pull https://github.com/Quiltic/DragonTurtle.git")
 print("cloned")
 
 #give it a moment or 12 then go home
