@@ -1491,12 +1491,30 @@
             <str name="components" val="V"/>
             <str name="duration" val="Instantaneous"/>
         </dict>
-        <str name="does" val="|n You whisper a discordant melody that only one creature of your choice within range can hear, wracking it with terrible pain. |nThe target must make a Wisdom saving throw. On a failed save, it takes 3d6 psychic damage and must immediately use its reaction , if available, to move as far as its speed allows away from you. The creature doesn't move into obviously dangerous ground, such as a fire or a pit. On a successful save, the target takes half as much damage and doesn't have to move away. A deafened creature automatically succeeds on the save. |n    When you cast this spell using a spell slot of 2nd level or higher, the damage increases by 1d6 for each slot level above 1st
-       "/>
+        <str name="does" val="|n You whisper a discordant melody that only one creature of your choice within range can hear, wracking it with terrible pain. |nThe target must make a Wisdom saving throw. On a failed save, it takes 3d6 psychic damage and must immediately use its reaction , if available, to move as far as its speed allows away from you. The creature doesn't move into obviously dangerous ground, such as a fire or a pit. On a successful save, the target takes half as much damage and doesn't have to move away. A deafened creature automatically succeeds on the save. |n    When you cast this spell using a spell slot of 2nd level or higher, the damage increases by 1d6 for each slot level above 1st        "/>
         <str name="page" val="Page: 234  Players Handbook     "/>
         <list name="classes">
             <str val="Bard"/>
         </list>
         <str name="url" val="https://www.dnd-spells.com/spell/dissonant-whispers"/>
+    </dict>
+    <dict name="misty-step">
+        <str name="name" val="Misty Step"/>
+        <str name="school" val="Conjuration"/>
+        <dict name="cast">
+            <str name="level" val=" 2"/>
+            <str name="casting time" val="1 Bonus Action"/>
+            <str name="range" val="Self"/>
+            <str name="components" val="V"/>
+            <str name="duration" val="Instantaneous"/>
+        </dict>
+        <str name="does" val="|n Briefly surrounded by silvery mist, you teleport up to 30 feet to an unoccupied space that you can see. |n"/>
+        <str name="page" val="Page: 260  Players Handbook     "/>
+        <list name="classes">
+            <str val="Sorcerer"/>
+            <str val="Warlock"/>
+            <str val="Wizard"/>
+        </list>
+        <str name="url" val="https://www.dnd-spells.com/spell/misty-step"/>
     </dict>
 </dict>

@@ -350,8 +350,10 @@ def findSpell(spellname):
     '''
 
     spellname = spellname.lower().replace(' ','-') # spells get put into the website as first-last (No spaces no caps)
+    print("Spell Name {}".format(spellname))
     url = "https://www.dnd-spells.com/spell/"+spellname # get url
     r  = requests.get(url) # get data from url
+    print(f"Has request: {r != None}")
 
     data = r.text # makes a nice text stuff
     soup = BeautifulSoup(data,features="lxml") # maks a soup
@@ -362,23 +364,25 @@ def findSpell(spellname):
 
 
     div = soup.find_all("div") # gives all the divs
-    
+    print(f"Div Amount: {len(div)}")
+
     Spell = {} # spell base
 
     home = div[20].find_all("div")[0] # get the spells sorce from website
+    print(f"Home {home}")
 
     #spells name
     name = str(home.find('h1')) # gets name of spell in nice format
     name = name[name.find('span>')+5:name.find('</span')] # cleanup
     Spell['name'] = name # save
-    
+    print(f"Name: {name}")
 
     # this is all the achual info that we want
     stuff = home.find_all('p')
 
     school = str(stuff[0])[3:-4] # gives the school its apart of
     Spell['school'] = school
-    
+    print(f"School: {school}")
 
     # information for the casting
     casting_stuff = str(stuff[1])[5:-5].replace('        ','') # cleanup
@@ -390,13 +394,14 @@ def findSpell(spellname):
         cast[a[:loc].lower()] = a[loc+2:-1] 
 
     Spell['cast'] = cast
-    
+    print(f"CASTSTUFF {cast}")
+
 
     # gets wonky from here because sometimes there is a higher lvl spell stuff
     clean = str(stuff[2]).replace('\n','|n') # SAVE THE NEWLINES!
     clean = ' '.join(clean.split()) # weird spaces exist so this just removes them 
     what_do = str(clean)[4:-5].replace('<br/>','').replace('        ','')# what the spell do # cleanup
-
+    
     # this is if there is a hihger lvl section
     segment = 0 # we need to shunt down the next stuff to move correct for this section
     if ('At higher level' in str(home)):
@@ -405,20 +410,26 @@ def findSpell(spellname):
     
     what_do = what_do.replace('’',"'").replace('•','*').replace('–','-')#.replace('|n','\n') # cleanup is insane on this
     Spell['does'] = what_do
-
+    print(f"What DO: {what_do}")
     
+
     page = str(stuff[3+segment])[5:-4].replace('        ','') # where it is from
     Spell['page'] = page
-    
+    print(f"Page: {page}")
+
     # gives what classes it is naturaly apart of as a list
     classes = stuff[4+segment].find_all('a') # cleanup
     for a in range(len(classes)):
         classes[a] = classes[a].get_text()
     Spell['classes'] = list(classes)
-    
+    print(f"Classes: {classes}")
+
     # need url
     Spell['url'] = url
+    print(f"URL: {url}")
+
     return(Spell) # fini
+
 
 
 # gives a spell from a spellbook or adds a spell to a spellbook if not there
