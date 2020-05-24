@@ -89,6 +89,7 @@ except:
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 ###################### Custom Admin Commands ###################
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+'''
 @bot.command()
 async def showTerminal(ctx, *args):
     """ Basicly is an ssh into the rasberry pi """
@@ -105,6 +106,7 @@ async def showTerminal(ctx, *args):
             await ctx.send(out) # Print the output of the terminal, it will look weard because it keeps the "b " and \n dont know why
     else:
         await ctx.send("Failed!")
+'''
 
 @bot.command()
 async def update(ctx):
