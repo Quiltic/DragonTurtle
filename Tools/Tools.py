@@ -341,6 +341,34 @@ def offenceSpell(spell):
     return(offencive)
 
 
+# SPELLLLSSSSSS
+def getAllSpells():
+    """
+    This gives every spell from every major ofital D&D book. May be behind.
+    Only here to be saved for later use if needed
+    """
+    url = 'https://www.dnd-spells.com/spells'
+
+    r  = requests.get(url) # get data from url
+    print(f"Has request: {r != None}")
+
+    data = r.text # makes a nice text stuff
+    soup = BeautifulSoup(data,features="lxml") # maks a soup
+
+    tr = soup.find_all("tr") # gives all the divs
+    print(f"Div Amount: {len(tr)}")
+    spells = []
+    for a in tr:
+        try: # There are 2 empty holders. Probably just templates for new spells
+            a = a.find_all('a')[0].get('href') # url
+            #print(a[33:].replace('-',' ')) 
+            spells.append(a[33:].replace('-',' ')) # True name
+        except:
+            pass
+    print(f"Amount of spells total {len(spells)}")
+    return(spells)
+
+
 # bread and butter of file. Gets spells 
 def findSpell(spellname):
     '''
@@ -369,7 +397,7 @@ def findSpell(spellname):
     Spell = {} # spell base
 
     home = div[20].find_all("div")[0] # get the spells sorce from website
-    print(f"Home {home}")
+    print(f"Found Home: {home != None}")
 
     #spells name
     name = str(home.find('h1')) # gets name of spell in nice format
@@ -408,8 +436,8 @@ def findSpell(spellname):
         segment = 1
         what_do += str(stuff[3])[5:-5].replace('<br/>','').replace('        ','')# what the spell do continued
     
-    what_do = what_do.replace('’',"'").replace('•','*').replace('–','-')#.replace('|n','\n') # cleanup is insane on this
-    Spell['does'] = what_do
+    what_do = what_do.replace('’',"'").replace('•','*').replace('–','-').replace("",' ').replace("",' ').replace("",'-') #.replace('|n','\n') # cleanup is insane on this... Also every box is a difrent chariter, somehow
+    Spell['does'] = str(what_do) #.encode('utf-8').decode() # So basicly. UNICODE IN A BYTE LIST IS A BBBBBBBBBBBBBBBBBBBBBBBBBB
     print(f"What DO: {what_do}")
     
 
@@ -429,7 +457,6 @@ def findSpell(spellname):
     print(f"URL: {url}")
 
     return(Spell) # fini
-
 
 
 # gives a spell from a spellbook or adds a spell to a spellbook if not there

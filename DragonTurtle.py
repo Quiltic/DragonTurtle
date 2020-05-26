@@ -1058,7 +1058,10 @@ async def cast(ctx, *spell):
                 await ctx.send(embed = spl)
 
             except Exception as e:
-                await sendmsg(ctx,'Cast Error: {}'.format(e))
+                if '#' in e:
+                    await sendmsg(ctx,'Sorry but you need to make a Charicter to use []cast. Do `[]charicter` for instructions.')
+                else:
+                    await sendmsg(ctx,'Cast Error: {}'.format(e))
 
         else:
             await sendmsg(ctx,"Cant get spell: {}".format(spell))
@@ -1074,34 +1077,39 @@ async def spell(ctx, *spell):
 
     if spell == '':
         await sendmsg(ctx, "Here is my Source Spellbook: https://www.dnd-spells.com/spell")
+    try:
+        async with ctx.channel.typing():
+            await ctx.message.add_reaction("📖")
+            #await sendmsg(ctx,"Refactoring spell list")
 
-    async with ctx.channel.typing():
-        await ctx.message.add_reaction("📖")
-        #await sendmsg(ctx,"Refactoring spell list")
+            #reloadSpellList()
+            data = SpellBook(spell)
 
-        #reloadSpellList()
-        data = SpellBook(spell)
+            print(data)
+            #'''
+            if (data != None) and (data != 'None'):
+                spl=discord.Embed(title=data['name'], url=data['url'], description="School: {}".format(data['school']), color=0x2778c0)
+                #embed.set_thumbnail(url="https://cdn.discordapp.com/embed/avatars/0.png")
+                spl.add_field(name="Level", value=data['cast']['level'], inline=True)
+                spl.add_field(name="Casting Time", value=data['cast']['casting time'], inline=True)
+                spl.add_field(name="Range", value=data['cast']['range'], inline=True)
+                spl.add_field(name="Components", value=data['cast']['components'], inline=True)
+                spl.add_field(name="Duration", value=data['cast']['duration'], inline=True)
 
-        print(data)
-        #'''
-        if (data != None) and (data != 'None'):
-            spl=discord.Embed(title=data['name'], url=data['url'], description="School: {}".format(data['school']), color=0x2778c0)
-            #embed.set_thumbnail(url="https://cdn.discordapp.com/embed/avatars/0.png")
-            spl.add_field(name="Level", value=data['cast']['level'], inline=True)
-            spl.add_field(name="Casting Time", value=data['cast']['casting time'], inline=True)
-            spl.add_field(name="Range", value=data['cast']['range'], inline=True)
-            spl.add_field(name="Components", value=data['cast']['components'], inline=True)
-            spl.add_field(name="Duration", value=data['cast']['duration'], inline=True)
+                if len(data['does']) < 1000:
+                    spl.add_field(name="What Do", value=str(data['does']).replace('|n','\n'), inline=False)
+                else:
+                    spl.add_field(name="What Do", value=str(data['does'][:1000]).replace('|n','\n'), inline=False)
 
-            if len(data['does']) < 1000:
-                spl.add_field(name="What Do", value=data['does'].replace('|n','\n'), inline=False)
+                spl.set_footer(text="Page: {}    |:|    Classes: {}".format(data['page'],data['classes']))
+                await ctx.send(embed = spl)
             else:
-                spl.add_field(name="What Do", value=(data['does'][:1000]).replace('|n','\n'), inline=False)
+                await sendmsg(ctx,"Cant get spell: {}".format(spell))
 
-            spl.set_footer(text="Page: {}    |:|    Classes: {}".format(data['page'],data['classes']))
-            await ctx.send(embed = spl)
-        else:
-            await sendmsg(ctx,"Cant get spell: {}".format(spell))
+    except Exception as e:
+        await sendmsg(ctx, f"Spell Error: {e}")
+        print(type(e), e)
+
        
 
 
