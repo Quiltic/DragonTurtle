@@ -158,7 +158,7 @@ async def update(ctx):
     await sendmsg(ctx,"Directory changed")
     print("changed cd")
     #open update
-    call_freind = "python3 /home/pi/Turtle/TurtleUpdate.py &"
+    call_freind = "python3 /home/pi/DragonTurtle/TurtleUpdate.py &"
     print(call_freind)
     os.system(call_freind)
     #subprocess.Popen(callfreind)
