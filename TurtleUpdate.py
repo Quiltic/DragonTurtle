@@ -11,8 +11,8 @@ print("cloned") # Tell me you did it
 
 # go home
 os.chdir(cwd)
-os.system("sudo chmod ugo+rwx ActiveUsing.xml") # this is a failsafe
-os.system("mv /home/pi/DragonTurtle/Tools/player.py /home/pi/DragonTurtle/Tools/Player.py") # For some reason its saved as a lowercase p when installed with git
+#os.system("sudo chmod ugo+rwx ActiveUsing.xml") # this is a failsafe
+#os.system("mv /home/pi/DragonTurtle/Tools/player.py /home/pi/DragonTurtle/Tools/Player.py") # For some reason its saved as a lowercase p when installed with git
 
 #reopen turtle
 call_freind = "python3 " + cwd + "/DragonTurtle.py &" # Launch the Dragon Command
