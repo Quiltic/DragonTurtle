@@ -1,0 +1,596 @@
+<?xml version="1.0" ?>
+<dict>
+    <dict name="Bertle#9579">
+        <dict name="Bob">
+            <str name="name" val="Bob"/>
+            <str name="url" val="https://www.dndbeyond.com/characters/builder#/"/>
+            <str name="mainClass" val="bard"/>
+            <int name="level" val="18"/>
+            <dict name="stats">
+                <int name="STR" val="6"/>
+                <int name="DEX" val="12"/>
+                <int name="CON" val="15"/>
+                <int name="INT" val="12"/>
+                <int name="WIS" val="2"/>
+                <int name="CHA" val="20"/>
+            </dict>
+            <int name="AC" val="19"/>
+            <int name="curHP" val="10"/>
+            <int name="maxHP" val="10"/>
+            <str name="speed" val="30ft"/>
+            <int name="cash" val="123412"/>
+            <str name="invintory" val=""/>
+            <list name="spellList"/>
+            <dict name="spellSlots">
+                <int name="1" val="0"/>
+                <int name="2" val="0"/>
+                <int name="3" val="0"/>
+                <int name="4" val="0"/>
+                <int name="5" val="0"/>
+                <int name="6" val="0"/>
+                <int name="7" val="0"/>
+                <int name="8" val="0"/>
+                <int name="9" val="0"/>
+            </dict>
+            <dict name="spellSlotsMax">
+                <int name="1" val="0"/>
+                <int name="2" val="0"/>
+                <int name="3" val="0"/>
+                <int name="4" val="0"/>
+                <int name="5" val="0"/>
+                <int name="6" val="0"/>
+                <int name="7" val="0"/>
+                <int name="8" val="0"/>
+                <int name="9" val="0"/>
+            </dict>
+            <dict name="customRolls">
+                <dict name="dice">
+                    <str name="~Roll" val="1d6"/>
+                    <list name="Table">
+                        <str val="1d4"/>
+                        <str val="1d6"/>
+                        <str val="1d8"/>
+                        <str val="1d10"/>
+                        <str val="1d12"/>
+                        <str val="1d20"/>
+                    </list>
+                </dict>
+            </dict>
+            <str name="skillsProf" val="__"/>
+            <str name="expertise" val="__"/>
+        </dict>
+        <dict name="Dayna">
+            <str name="name" val="Dayna"/>
+            <str name="url" val="https://www.dungeonmastersvault.com/pages/dnd/5e/characters/17592196327695?frame=true"/>
+            <str name="mainClass" val="cleric"/>
+            <int name="level" val="7"/>
+            <dict name="stats">
+                <int name="STR" val="13"/>
+                <int name="DEX" val="18"/>
+                <int name="CON" val="13"/>
+                <int name="INT" val="13"/>
+                <int name="WIS" val="20"/>
+                <int name="CHA" val="15"/>
+            </dict>
+            <int name="AC" val="19"/>
+            <int name="curHP" val="39"/>
+            <int name="maxHP" val="39"/>
+            <str name="speed" val="25ft 50fly"/>
+            <int name="cash" val="159996"/>
+            <str name="invintory" val=""/>
+            <list name="spellList"/>
+            <dict name="spellSlots">
+                <int name="1" val="0"/>
+                <int name="2" val="0"/>
+                <int name="3" val="0"/>
+                <int name="4" val="0"/>
+                <int name="5" val="0"/>
+                <int name="6" val="0"/>
+                <int name="7" val="0"/>
+                <int name="8" val="0"/>
+                <int name="9" val="0"/>
+            </dict>
+            <dict name="spellSlotsMax">
+                <int name="1" val="0"/>
+                <int name="2" val="0"/>
+                <int name="3" val="0"/>
+                <int name="4" val="0"/>
+                <int name="5" val="0"/>
+                <int name="6" val="0"/>
+                <int name="7" val="0"/>
+                <int name="8" val="0"/>
+                <int name="9" val="0"/>
+            </dict>
+            <dict name="customRolls">
+                <dict name="gunshot">
+                    <str name="Hit" val="1d10 +int +prof"/>
+                    <str name="Damage" val="1d10 +int +prof"/>
+                </dict>
+            </dict>
+            <str name="skillsProf" val="Insight, Perception, Persuasion, Religion"/>
+            <str name="expertise" val=""/>
+        </dict>
+        <dict name="Kulu">
+            <str name="name" val="Kulu"/>
+            <str name="url" val="https://www.dungeonmastersvault.com/pages/dnd/5e/characters/17592199352349"/>
+            <str name="mainClass" val="monk"/>
+            <int name="level" val="9"/>
+            <dict name="stats">
+                <int name="STR" val="8"/>
+                <int name="DEX" val="20"/>
+                <int name="CON" val="13"/>
+                <int name="INT" val="12"/>
+                <int name="WIS" val="19"/>
+                <int name="CHA" val="14"/>
+            </dict>
+            <int name="AC" val="19"/>
+            <int name="curHP" val="45"/>
+            <int name="maxHP" val="45"/>
+            <str name="speed" val="40ft; 50ft (Fly)"/>
+            <int name="cash" val="0"/>
+            <str name="invintory" val=""/>
+            <list name="spellList"/>
+            <dict name="spellSlots">
+                <int name="1" val="0"/>
+                <int name="2" val="0"/>
+                <int name="3" val="0"/>
+                <int name="4" val="0"/>
+                <int name="5" val="0"/>
+                <int name="6" val="0"/>
+                <int name="7" val="0"/>
+                <int name="8" val="0"/>
+                <int name="9" val="0"/>
+            </dict>
+            <dict name="spellSlotsMax">
+                <int name="1" val="0"/>
+                <int name="2" val="0"/>
+                <int name="3" val="0"/>
+                <int name="4" val="0"/>
+                <int name="5" val="0"/>
+                <int name="6" val="0"/>
+                <int name="7" val="0"/>
+                <int name="8" val="0"/>
+                <int name="9" val="0"/>
+            </dict>
+            <dict name="customRolls"/>
+            <str name="skillsProf" val="Acrobatics, Insight, Religion, Stealth"/>
+            <str name="expertise" val=""/>
+        </dict>
+        <dict name="Tyson">
+            <str name="name" val="Tyson"/>
+            <str name="url" val="https://www.dungeonmastersvault.com/pages/dnd/5e/characters/17592210050232"/>
+            <str name="mainClass" val="artificer"/>
+            <int name="level" val="9"/>
+            <dict name="stats">
+                <int name="STR" val="12"/>
+                <int name="DEX" val="6"/>
+                <int name="CON" val="13"/>
+                <int name="INT" val="20"/>
+                <int name="WIS" val="13"/>
+                <int name="CHA" val="13"/>
+            </dict>
+            <int name="AC" val="15"/>
+            <int name="curHP" val="45"/>
+            <int name="maxHP" val="45"/>
+            <str name="speed" val="30ft"/>
+            <int name="cash" val="0"/>
+            <str name="invintory" val=""/>
+            <list name="spellList"/>
+            <dict name="spellSlots">
+                <int name="1" val="0"/>
+                <int name="2" val="0"/>
+                <int name="3" val="0"/>
+                <int name="4" val="0"/>
+                <int name="5" val="0"/>
+                <int name="6" val="0"/>
+                <int name="7" val="0"/>
+                <int name="8" val="0"/>
+                <int name="9" val="0"/>
+            </dict>
+            <dict name="spellSlotsMax">
+                <int name="1" val="0"/>
+                <int name="2" val="0"/>
+                <int name="3" val="0"/>
+                <int name="4" val="0"/>
+                <int name="5" val="0"/>
+                <int name="6" val="0"/>
+                <int name="7" val="0"/>
+                <int name="8" val="0"/>
+                <int name="9" val="0"/>
+            </dict>
+            <dict name="customRolls"/>
+            <str name="skillsProf" val="Arcana, Investigation, Medicine, Perception"/>
+            <str name="expertise" val=""/>
+        </dict>
+        <dict name="Crock">
+            <str name="name" val="Crock"/>
+            <str name="url" val="https://www.dungeonmastersvault.com/pages/dnd/5e/characters/17592227881761"/>
+            <str name="mainClass" val="warlock"/>
+            <int name="level" val="6"/>
+            <dict name="stats">
+                <int name="STR" val="10"/>
+                <int name="DEX" val="17"/>
+                <int name="CON" val="13"/>
+                <int name="INT" val="4"/>
+                <int name="WIS" val="15"/>
+                <int name="CHA" val="18"/>
+            </dict>
+            <int name="AC" val="14"/>
+            <int name="curHP" val="-13"/>
+            <int name="maxHP" val="39"/>
+            <str name="speed" val="25ft"/>
+            <int name="cash" val="6000"/>
+            <str name="invintory" val=""/>
+            <list name="spellList"/>
+            <dict name="spellSlots">
+                <int name="1" val="0"/>
+                <int name="2" val="0"/>
+                <int name="3" val="0"/>
+                <int name="4" val="0"/>
+                <int name="5" val="0"/>
+                <int name="6" val="0"/>
+                <int name="7" val="0"/>
+                <int name="8" val="0"/>
+                <int name="9" val="0"/>
+            </dict>
+            <dict name="spellSlotsMax">
+                <int name="1" val="0"/>
+                <int name="2" val="0"/>
+                <int name="3" val="0"/>
+                <int name="4" val="0"/>
+                <int name="5" val="0"/>
+                <int name="6" val="0"/>
+                <int name="7" val="0"/>
+                <int name="8" val="0"/>
+                <int name="9" val="0"/>
+            </dict>
+            <dict name="customRolls">
+                <dict name="yoyo">
+                    <str name="Hit" val="1d20 + cha + prof + 1"/>
+                    <str name="Damage" val="1d6 + 2d8 + prof + cha + 1"/>
+                </dict>
+            </dict>
+            <str name="skillsProf" val="Athletics, Deception, Intimidation, Perception"/>
+            <str name="expertise" val=""/>
+        </dict>
+    </dict>
+    <dict name="noss#0773">
+        <dict name="Test">
+            <str name="name" val="Test"/>
+            <str name="url" val="https://www.dndbeyond.com/characters/builder#"/>
+            <str name="mainClass" val="wizard"/>
+            <int name="level" val="420"/>
+            <dict name="stats">
+                <int name="STR" val="1"/>
+                <int name="DEX" val="40"/>
+                <int name="CON" val="10"/>
+                <int name="INT" val="8"/>
+                <int name="WIS" val="25"/>
+                <int name="CHA" val="4"/>
+            </dict>
+            <int name="AC" val="69"/>
+            <int name="curHP" val="3"/>
+            <int name="maxHP" val="3"/>
+            <str name="speed" val="1000ft"/>
+            <int name="cash" val="80000"/>
+            <str name="invintory" val=""/>
+            <list name="spellList"/>
+            <dict name="spellSlots">
+                <int name="1" val="0"/>
+                <int name="2" val="0"/>
+                <int name="3" val="0"/>
+                <int name="4" val="0"/>
+                <int name="5" val="0"/>
+                <int name="6" val="0"/>
+                <int name="7" val="0"/>
+                <int name="8" val="0"/>
+                <int name="9" val="0"/>
+            </dict>
+            <dict name="spellSlotsMax">
+                <int name="1" val="0"/>
+                <int name="2" val="0"/>
+                <int name="3" val="0"/>
+                <int name="4" val="0"/>
+                <int name="5" val="0"/>
+                <int name="6" val="0"/>
+                <int name="7" val="0"/>
+                <int name="8" val="0"/>
+                <int name="9" val="0"/>
+            </dict>
+            <dict name="customRolls"/>
+            <str name="skillsProf" val="_"/>
+            <str name="expertise" val="_"/>
+        </dict>
+        <dict name="Hugo">
+            <str name="name" val="Hugo"/>
+            <str name="url" val="https://www.dungeonmastersvault.com/pages/dnd/5e/character-builder"/>
+            <str name="mainClass" val="sorcerer"/>
+            <int name="level" val="8"/>
+            <dict name="stats">
+                <int name="STR" val="8"/>
+                <int name="DEX" val="16"/>
+                <int name="CON" val="16"/>
+                <int name="INT" val="14"/>
+                <int name="WIS" val="13"/>
+                <int name="CHA" val="18"/>
+            </dict>
+            <int name="AC" val="16"/>
+            <int name="curHP" val="66"/>
+            <int name="maxHP" val="66"/>
+            <str name="speed" val="30ft"/>
+            <int name="cash" val="57500"/>
+            <str name="invintory" val=""/>
+            <list name="spellList"/>
+            <dict name="spellSlots">
+                <int name="1" val="0"/>
+                <int name="2" val="0"/>
+                <int name="3" val="0"/>
+                <int name="4" val="0"/>
+                <int name="5" val="0"/>
+                <int name="6" val="0"/>
+                <int name="7" val="0"/>
+                <int name="8" val="0"/>
+                <int name="9" val="0"/>
+            </dict>
+            <dict name="spellSlotsMax">
+                <int name="1" val="0"/>
+                <int name="2" val="0"/>
+                <int name="3" val="0"/>
+                <int name="4" val="0"/>
+                <int name="5" val="0"/>
+                <int name="6" val="0"/>
+                <int name="7" val="0"/>
+                <int name="8" val="0"/>
+                <int name="9" val="0"/>
+            </dict>
+            <dict name="customRolls"/>
+            <str name="skillsProf" val="Deception, History, Insight, Perception, Persuasion, Stealth"/>
+            <str name="expertise" val=""/>
+        </dict>
+    </dict>
+    <dict name="bebenebenebeb#4834">
+        <dict name="Ben">
+            <str name="name" val="Ben"/>
+            <str name="url" val="https://ruck.dev"/>
+            <str name="mainClass" val="bard"/>
+            <int name="level" val="5"/>
+            <dict name="stats">
+                <int name="STR" val="103"/>
+                <int name="DEX" val="104"/>
+                <int name="CON" val="105"/>
+                <int name="INT" val="106"/>
+                <int name="WIS" val="107"/>
+                <int name="CHA" val="108"/>
+            </dict>
+            <int name="AC" val="100"/>
+            <int name="curHP" val="101"/>
+            <int name="maxHP" val="101"/>
+            <str name="speed" val="102ft"/>
+            <int name="cash" val="0"/>
+            <str name="invintory" val=""/>
+            <list name="spellList"/>
+            <dict name="spellSlots">
+                <int name="1" val="0"/>
+                <int name="2" val="0"/>
+                <int name="3" val="0"/>
+                <int name="4" val="0"/>
+                <int name="5" val="0"/>
+                <int name="6" val="0"/>
+                <int name="7" val="0"/>
+                <int name="8" val="0"/>
+                <int name="9" val="0"/>
+            </dict>
+            <dict name="spellSlotsMax">
+                <int name="1" val="0"/>
+                <int name="2" val="0"/>
+                <int name="3" val="0"/>
+                <int name="4" val="0"/>
+                <int name="5" val="0"/>
+                <int name="6" val="0"/>
+                <int name="7" val="0"/>
+                <int name="8" val="0"/>
+                <int name="9" val="0"/>
+            </dict>
+            <dict name="customRolls"/>
+            <str name="skillsProf" val=""/>
+            <str name="expertise" val=""/>
+        </dict>
+    </dict>
+    <dict name="Draco#9158">
+        <dict name="Ercan">
+            <str name="name" val="Ercan"/>
+            <str name="url" val="https://ddb.ac/characters/21930728/VxfrTM"/>
+            <str name="mainClass" val="wizard"/>
+            <int name="level" val="9"/>
+            <dict name="stats">
+                <int name="STR" val="12"/>
+                <int name="DEX" val="14"/>
+                <int name="CON" val="14"/>
+                <int name="INT" val="20"/>
+                <int name="WIS" val="11"/>
+                <int name="CHA" val="8"/>
+            </dict>
+            <int name="AC" val="16"/>
+            <int name="curHP" val="50"/>
+            <int name="maxHP" val="50"/>
+            <str name="speed" val="30ft"/>
+            <int name="cash" val="150456"/>
+            <str name="invintory" val=""/>
+            <list name="spellList"/>
+            <dict name="spellSlots">
+                <int name="1" val="0"/>
+                <int name="2" val="0"/>
+                <int name="3" val="0"/>
+                <int name="4" val="0"/>
+                <int name="5" val="0"/>
+                <int name="6" val="0"/>
+                <int name="7" val="0"/>
+                <int name="8" val="0"/>
+                <int name="9" val="0"/>
+            </dict>
+            <dict name="spellSlotsMax">
+                <int name="1" val="0"/>
+                <int name="2" val="0"/>
+                <int name="3" val="0"/>
+                <int name="4" val="0"/>
+                <int name="5" val="0"/>
+                <int name="6" val="0"/>
+                <int name="7" val="0"/>
+                <int name="8" val="0"/>
+                <int name="9" val="0"/>
+            </dict>
+            <dict name="customRolls"/>
+            <str name="skillsProf" val="Arcana, History, Insight, Investigation"/>
+            <str name="expertise" val=""/>
+        </dict>
+    </dict>
+    <dict name="fops#1969">
+        <dict name="Corey">
+            <str name="name" val="Corey"/>
+            <str name="url" val="https://www.dungeonmastersvault.com/pages/dnd/5e/characters/17592206385843"/>
+            <str name="mainClass" val="cleric"/>
+            <int name="level" val="8"/>
+            <dict name="stats">
+                <int name="STR" val="14"/>
+                <int name="DEX" val="12"/>
+                <int name="CON" val="16"/>
+                <int name="INT" val="10"/>
+                <int name="WIS" val="18"/>
+                <int name="CHA" val="10"/>
+            </dict>
+            <int name="AC" val="15"/>
+            <int name="curHP" val="59"/>
+            <int name="maxHP" val="59"/>
+            <str name="speed" val="30ft"/>
+            <int name="cash" val="57500"/>
+            <str name="invintory" val=""/>
+            <list name="spellList"/>
+            <dict name="spellSlots">
+                <int name="1" val="0"/>
+                <int name="2" val="0"/>
+                <int name="3" val="0"/>
+                <int name="4" val="0"/>
+                <int name="5" val="0"/>
+                <int name="6" val="0"/>
+                <int name="7" val="0"/>
+                <int name="8" val="0"/>
+                <int name="9" val="0"/>
+            </dict>
+            <dict name="spellSlotsMax">
+                <int name="1" val="0"/>
+                <int name="2" val="0"/>
+                <int name="3" val="0"/>
+                <int name="4" val="0"/>
+                <int name="5" val="0"/>
+                <int name="6" val="0"/>
+                <int name="7" val="0"/>
+                <int name="8" val="0"/>
+                <int name="9" val="0"/>
+            </dict>
+            <dict name="customRolls"/>
+            <str name="skillsProf" val="Arcana, History, Insight, Perception, Persuasion, Religion, Sleight of Hand"/>
+            <str name="expertise" val=""/>
+        </dict>
+    </dict>
+    <dict name="LordCongrave#1512">
+        <dict name="Rocco">
+            <str name="name" val="Rocco"/>
+            <str name="url" val="https://www.dndbeyond.com/profile/CHARRRRRRRGE/characters/28780151"/>
+            <str name="mainClass" val="artificer"/>
+            <int name="level" val="7"/>
+            <dict name="stats">
+                <int name="STR" val="7"/>
+                <int name="DEX" val="12"/>
+                <int name="CON" val="9"/>
+                <int name="INT" val="17"/>
+                <int name="WIS" val="13"/>
+                <int name="CHA" val="14"/>
+            </dict>
+            <int name="AC" val="11"/>
+            <int name="curHP" val="23"/>
+            <int name="maxHP" val="23"/>
+            <str name="speed" val="30ft"/>
+            <int name="cash" val="57500"/>
+            <str name="invintory" val=""/>
+            <list name="spellList"/>
+            <dict name="spellSlots">
+                <int name="1" val="0"/>
+                <int name="2" val="0"/>
+                <int name="3" val="0"/>
+                <int name="4" val="0"/>
+                <int name="5" val="0"/>
+                <int name="6" val="0"/>
+                <int name="7" val="0"/>
+                <int name="8" val="0"/>
+                <int name="9" val="0"/>
+            </dict>
+            <dict name="spellSlotsMax">
+                <int name="1" val="0"/>
+                <int name="2" val="0"/>
+                <int name="3" val="0"/>
+                <int name="4" val="0"/>
+                <int name="5" val="0"/>
+                <int name="6" val="0"/>
+                <int name="7" val="0"/>
+                <int name="8" val="0"/>
+                <int name="9" val="0"/>
+            </dict>
+            <dict name="customRolls"/>
+            <str name="skillsProf" val="Deception, Investigation, Perception, Stealth"/>
+            <str name="expertise" val=""/>
+        </dict>
+    </dict>
+    <dict name="Satan#3592">
+        <dict name="Rocco">
+            <str name="name" val="Rocco"/>
+            <str name="url" val="https://www.dndbeyond.com/profile/CHARRRRRRRGE/characters/28780151"/>
+            <str name="mainClass" val="artificer"/>
+            <int name="level" val="7"/>
+            <dict name="stats">
+                <int name="STR" val="7"/>
+                <int name="DEX" val="12"/>
+                <int name="CON" val="9"/>
+                <int name="INT" val="17"/>
+                <int name="WIS" val="13"/>
+                <int name="CHA" val="14"/>
+            </dict>
+            <int name="AC" val="11"/>
+            <int name="curHP" val="23"/>
+            <int name="maxHP" val="23"/>
+            <str name="speed" val="30ft"/>
+            <int name="cash" val="1000"/>
+            <str name="invintory" val=""/>
+            <list name="spellList"/>
+            <dict name="spellSlots">
+                <int name="1" val="0"/>
+                <int name="2" val="0"/>
+                <int name="3" val="0"/>
+                <int name="4" val="0"/>
+                <int name="5" val="0"/>
+                <int name="6" val="0"/>
+                <int name="7" val="0"/>
+                <int name="8" val="0"/>
+                <int name="9" val="0"/>
+            </dict>
+            <dict name="spellSlotsMax">
+                <int name="1" val="0"/>
+                <int name="2" val="0"/>
+                <int name="3" val="0"/>
+                <int name="4" val="0"/>
+                <int name="5" val="0"/>
+                <int name="6" val="0"/>
+                <int name="7" val="0"/>
+                <int name="8" val="0"/>
+                <int name="9" val="0"/>
+            </dict>
+            <dict name="customRolls">
+                <dict name="gunshot">
+                    <str name="Hit" val="1d10 +int +prof"/>
+                    <str name="Damage" val="1d10 +int +prof"/>
+                </dict>
+            </dict>
+            <str name="skillsProf" val="Deception, Investigation, Perception, Stealth"/>
+            <str name="expertise" val=""/>
+        </dict>
+    </dict>
+</dict>
