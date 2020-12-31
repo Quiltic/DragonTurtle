@@ -43,7 +43,7 @@ class Helper(commands.Cog):
     @commands.command()
     async def yell(self,ctx):
         """Turtle just Yells at you"""
-        await sendmsgdirect(ctx,"AGGGG")
+        await sendmsg(ctx,"AGGGG")
 
     @commands.command()
     async def gitURL(self,ctx):
