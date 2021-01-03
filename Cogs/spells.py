@@ -204,6 +204,32 @@ class Spells(commands.Cog):
 
                     await ctx.send(embed = spl)
 
+
+                    # UNDO A UPCAST THIS IS BECAUSE MAGIC WITH THE SPELL DATA
+                    try:
+                        if len(data['fight']['damage']):
+                            if data['cast']['level'] == 'Cantrip':
+                                if data['fight']['damage'][-1][0][data['fight']['damage'][-1][0].index('d'):] == data['fight']['higherLvl'][data['fight']['higherLvl'].index('d'):]:
+                                    increase = int(data['fight']['higherLvl'][:data['fight']['higherLvl'].index('d')]) * math.floor((int(user.level)+1)/6) # ups at lvl 5, 11, & 17 so this does the charm
+                                    #print(int(data['fight']['damage'][-1][0][:data['fight']['damage'][-1][0].index('d')]),int(data['fight']['higherLvl'][:data['fight']['higherLvl'].index('d')])*(upcharge-int(data['cast']['level'])))
+                                    data['fight']['damage'][-1][0] = str(int(data['fight']['damage'][-1][0][:data['fight']['damage'][-1][0].index('d')]) - increase) + data['fight']['damage'][-1][0][data['fight']['damage'][-1][0].index('d'):]
+
+                            elif upcharge > int(data['cast']['level']):
+                                
+                                # So there is an annoying glitch that becasue of the line below being in healing spells it wont upcast
+                                # .replace(" + spellcasting_ability_modifier",'')
+                                
+                                print(data['fight']['damage'][-1][0][data['fight']['damage'][-1][0].index('d'):],data['fight']['higherLvl'][data['fight']['higherLvl'].index('d'):])
+                                if data['fight']['damage'][-1][0][data['fight']['damage'][-1][0].index('d'):].replace('O','0').replace(" + spellcasting_ability_modifier",'') == data['fight']['higherLvl'][data['fight']['higherLvl'].index('d'):].replace('O','0').replace(" + spellcasting_ability_modifier",''):
+                                    #print(int(data['fight']['damage'][-1][0][:data['fight']['damage'][-1][0].index('d')]),int(data['fight']['higherLvl'][:data['fight']['higherLvl'].index('d')])*(upcharge-int(data['cast']['level'])))
+                                    data['fight']['damage'][-1][0] = str(int(data['fight']['damage'][-1][0][:data['fight']['damage'][-1][0].index('d')].replace('O','0').replace(" + spellcasting_ability_modifier",'')) - int(data['fight']['higherLvl'][:data['fight']['higherLvl'].index('d')].replace('O','0').replace(" + spellcasting_ability_modifier",''))*(upcharge-int(data['cast']['level']))) + data['fight']['damage'][-1][0][data['fight']['damage'][-1][0].index('d'):]
+                                #data['fight']['damage'][-1] will be increased?
+
+                                
+                                
+                    except:
+                        pass
+
                 except Exception as e:
                     await sendmsg(ctx,'Cast Error: {}'.format(e))
 
